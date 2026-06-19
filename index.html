@@ -393,6 +393,44 @@
       font-size: .8rem;
     }
 
+    /* ── INTRO & ISSUE LISTS ───────────────────── */
+    .section-intro-list,
+    .issue-list {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-intro-list { margin-bottom: 3.5rem; }
+
+    .section-intro-list li,
+    .issue-list li {
+      position: relative;
+      padding-left: 1.4rem;
+      font-size: .95rem;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: .6rem;
+    }
+
+    .issue-list li {
+      color: var(--text);
+      font-size: .93rem;
+      margin-bottom: .55rem;
+    }
+
+    .section-intro-list li::before,
+    .issue-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--red);
+      font-size: .8rem;
+    }
+
+    .annotation .issue-list { margin-bottom: 0; }
+    .annotation .issue-list li { color: var(--text); font-size: .85rem; }
+
     /* ── DIVIDER ───────────────────────────────── */
     .divider {
       height: 1px;
@@ -519,7 +557,7 @@
   <div class="cover-body">
     <p class="cover-label">Website Audit &amp; Proposal &mdash; June 2026</p>
     <h1>A review of<br><em>Childhood Matters</em><br>childhoodmatters.co.uk</h1>
-    <p class="cover-sub">Prepared exclusively for Sandra Tibbles and the team at Childhood Matters Consulting Ltd. This document reviews the current website, identifies issues affecting legal compliance, visibility, and performance, and sets out a clear plan for improvement.</p>
+    <p class="cover-sub">Prepared exclusively for Sandra Tibbles and the team at Childhood Matters Consulting Ltd.</p>
   </div>
 
   <div class="cover-footer">
@@ -558,7 +596,12 @@
   <section id="overview">
     <p class="section-label">Introduction</p>
     <h2 class="section-title">A strong foundation,<br>with urgent gaps to address</h2>
-    <p class="section-intro">Childhood Matters has a professional, well-structured website that clearly communicates the breadth of your consultancy services. The platform and hosting are well-chosen. However, this review has identified several issues — some of which carry legal risk — that need to be resolved before the site can be considered fit for purpose as a business development tool.</p>
+    <ul class="section-intro-list">
+      <li>The site is professionally built on a solid platform — WordPress, Astra, and Elementor — hosted reliably on Cloudways (Google Cloud)</li>
+      <li>Services are clearly presented and the associate team section is a genuine strength</li>
+      <li>Several issues have been identified, some carrying legal risk, that need resolving before the site can be considered fully fit for purpose</li>
+      <li>This document sets out every issue in order of urgency, with clear actions at each stage</li>
+    </ul>
 
     <div class="summary-grid">
       <div class="summary-card">
@@ -605,7 +648,12 @@
   <section id="legal">
     <p class="section-label">Section 1 — Legal Compliance</p>
     <h2 class="section-title">Three legal requirements<br>are currently unmet</h2>
-    <p class="section-intro">This is the most urgent part of this report. The issues below are not optional improvements — they are requirements under UK law that expose the business to regulatory risk until they are resolved.</p>
+    <ul class="section-intro-list">
+      <li>These are not optional improvements — they are legal requirements</li>
+      <li>Until resolved, the business is exposed to regulatory risk under UK law</li>
+      <li>The ICO (Information Commissioner's Office) actively investigates and fines for exactly these breaches</li>
+      <li>I recommend addressing all three of these before anything else on this list</li>
+    </ul>
 
     <!-- Cookie -->
     <div class="issue">
@@ -614,11 +662,12 @@
         <h3 class="issue-title">No cookie consent banner — breach of UK GDPR and PECR</h3>
       </div>
 
-      <p>When a visitor arrives on childhoodmatters.co.uk, they receive no notice about cookies, no opportunity to accept or decline tracking, and no record of their preference is kept. This is a direct breach of two pieces of UK legislation:</p>
-
-      <p><strong>UK GDPR</strong> requires that visitors are informed about data collection and that a lawful basis exists before any personal data is processed. <strong>PECR</strong> (Privacy and Electronic Communications Regulations) goes further — it requires explicit, informed opt-in consent before any non-essential cookies are placed on a visitor's device.</p>
-
-      <p>The UK's data regulator, the ICO, actively investigates cookie consent failures and has the power to issue fines. This is not a grey area and must be the first thing addressed.</p>
+      <ul class="issue-list">
+        <li>No cookie notice appears when a visitor lands on the site — cookies are set without knowledge or consent</li>
+        <li><strong>UK GDPR</strong> — visitors must be informed before any personal data is processed</li>
+        <li><strong>PECR</strong> (Privacy and Electronic Communications Regulations) — explicit opt-in consent is required before any non-essential cookies are placed on a visitor's device</li>
+        <li>This is a direct breach of both and must be the first thing fixed</li>
+      </ul>
 
       <div class="screenshot-wrap">
         <div class="screenshot-bar">
@@ -629,7 +678,11 @@
         <div class="screenshot-caption"><strong>No cookie banner is present.</strong> The page loads in full with no consent notice, no opt-in, and no opt-out. A compliant site would display a consent layer before any tracking activates.</div>
       </div>
 
-      <p>The website currently has the MonsterInsights analytics plugin installed (to connect to Google Analytics), as well as WP Statistics for local visitor tracking. Both can set cookies. The following comment is visible in the site's HTML source code — confirming the analytics setup is incomplete and unprotected:</p>
+      <ul class="issue-list">
+        <li>MonsterInsights (Google Analytics plugin) and WP Statistics are both installed — both can set tracking cookies</li>
+        <li>Neither is currently gated behind any form of consent</li>
+        <li>The following comment is visible in the site's source code, visible to anyone who looks:</li>
+      </ul>
 
       <div class="source-quote">
         <span class="comment">&lt;!-- This site uses the Google Analytics by MonsterInsights plugin v10.2.2 --&gt;</span><br>
@@ -641,7 +694,10 @@
 
       <div class="annotation">
         <strong>What this means</strong>
-        The plugin is live, visible to any visitor who views source, and advertising to the world that Google Analytics is not configured. When GA is eventually connected, it will immediately begin tracking visitors without consent unless a cookie consent plugin is in place first.
+        <ul class="issue-list">
+          <li>The plugin is live and publicly advertising that GA is not set up</li>
+          <li>When GA is connected, it will immediately track visitors without consent unless the banner is in place first</li>
+        </ul>
       </div>
 
       <div class="rec-box">
@@ -664,9 +720,11 @@
         <h3 class="issue-title">No Privacy Policy published</h3>
       </div>
 
-      <p>Under UK GDPR, any organisation that collects personal data must publish a Privacy Policy that clearly explains what data is collected, why, for how long, who it is shared with, and how individuals can exercise their rights.</p>
-
-      <p>The contact form on childhoodmatters.co.uk collects names, email addresses, phone numbers, and organisation details. This alone makes a Privacy Policy mandatory. There is no such page on the site.</p>
+      <ul class="issue-list">
+        <li>UK GDPR requires any organisation collecting personal data to publish a Privacy Policy</li>
+        <li>The contact form collects names, email addresses, phone numbers, and organisation details — this alone makes a Privacy Policy mandatory</li>
+        <li>There is currently no Privacy Policy page anywhere on the site</li>
+      </ul>
 
       <div class="screenshot-wrap">
         <div class="screenshot-bar">
@@ -696,9 +754,11 @@
         <h3 class="issue-title">No Cookie Policy published</h3>
       </div>
 
-      <p>PECR requires a Cookie Policy (or a dedicated section within the Privacy Policy) that lists every cookie the site sets, explains its purpose, states its lifespan, and confirms whether it is essential or non-essential. This does not exist on the site.</p>
-
-      <p>Once a cookie consent plugin is installed, it will automatically generate and maintain this list — so this item is largely resolved as a by-product of fixing the consent banner.</p>
+      <ul class="issue-list">
+        <li>PECR requires a Cookie Policy listing every cookie set, its purpose, and its lifespan</li>
+        <li>This does not exist on the site</li>
+        <li>Most cookie consent plugins generate this automatically — so it is largely resolved as a by-product of fixing the consent banner</li>
+      </ul>
 
       <div class="rec-box">
         <h4>Recommendation</h4>
@@ -715,7 +775,10 @@
   <section id="analytics">
     <p class="section-label">Section 2 — Analytics</p>
     <h2 class="section-title">The business is flying blind<br>— no visitor data is being captured</h2>
-    <p class="section-intro">Without analytics, there is no way to know how many people visit the site, where they come from, what content they engage with, or whether visitors become enquiries. This needs to be resolved as a priority, but only after the cookie consent banner is in place.</p>
+    <ul class="section-intro-list">
+      <li>Right now there is no way to know how many people visit, where they come from, or whether any visitor has ever made an enquiry as a result of the site</li>
+      <li>This must be resolved — but only after the cookie consent banner is in place</li>
+    </ul>
 
     <div class="issue">
       <div class="issue-header">
@@ -723,9 +786,12 @@
         <h3 class="issue-title">Google Analytics is installed but not connected</h3>
       </div>
 
-      <p>The MonsterInsights plugin — which connects WordPress to Google Analytics — is installed on the site but has never been authenticated. As a result, no visitor data has ever been collected through GA. The plugin's own code comments this fact openly in the page source (see Section 1).</p>
-
-      <p>WP Statistics is running and collecting basic local visitor counts, but this tool provides a fraction of the insight that Google Analytics 4 offers: no traffic source breakdown, no user behaviour flows, no conversion tracking, no demographic data, and no integration with Google Search Console to show which search terms bring visitors to the site.</p>
+      <ul class="issue-list">
+        <li>MonsterInsights is installed but has never been authenticated — no GA data has ever been collected</li>
+        <li>WP Statistics is active but only provides basic page view counts</li>
+        <li>No traffic source data, no user behaviour, no conversion tracking, no demographic information</li>
+        <li>No link to Google Search Console — no visibility into which search terms bring people to the site</li>
+      </ul>
 
       <div class="rec-box">
         <h4>Recommendation</h4>
@@ -744,7 +810,11 @@
   <section id="seo">
     <p class="section-label">Section 3 — Search Engine Optimisation</p>
     <h2 class="section-title">Straightforward fixes that will<br>improve Google visibility</h2>
-    <p class="section-intro">The Yoast SEO plugin is installed and the sitemap is correctly configured. However, several important on-page SEO elements have not been set up, leaving visibility on the table for a business with this level of expertise.</p>
+    <ul class="section-intro-list">
+      <li>Yoast SEO is installed and the sitemap is correctly configured — good foundations</li>
+      <li>However, several important on-page elements have not been set up</li>
+      <li>These are straightforward fixes that will directly improve how the site performs in Google</li>
+    </ul>
 
     <div class="issue">
       <div class="issue-header">
@@ -752,9 +822,12 @@
         <h3 class="issue-title">Homepage title is not optimised</h3>
       </div>
 
-      <p>The homepage title — the most important on-page SEO signal — currently reads: <strong>"Home - Childhood Matters"</strong>. This provides no information to Google about what the business does or who it serves, and it will not rank for any relevant search terms.</p>
-
-      <p>A well-optimised title for this page might read: <em>Educational Consultancy &amp; SEND Support | Childhood Matters</em> — immediately communicating the service and audience to both Google and potential visitors scanning search results.</p>
+      <ul class="issue-list">
+        <li>Current title: <strong>"Home - Childhood Matters"</strong> — tells Google nothing about what the business does</li>
+        <li>It will not rank for any relevant search term</li>
+        <li>Suggested title: <em>Educational Consultancy &amp; SEND Support | Childhood Matters</em></li>
+        <li>Every page on the site needs a unique, keyword-led title — currently none of them have one</li>
+      </ul>
 
       <div class="rec-box">
         <h4>Recommendation</h4>
@@ -774,9 +847,11 @@
         <h3 class="issue-title">Meta descriptions not set on any pages</h3>
       </div>
 
-      <p>Meta descriptions are the short paragraphs that appear beneath each result in a Google search. They do not directly affect ranking, but they significantly influence click-through rates — how many people actually click your result over a competitor's.</p>
-
-      <p>None of the 24 pages have a meta description set in Yoast SEO. Google is falling back to pulling the first line of page content, which rarely reads well in a search context and represents a lost opportunity to make a strong first impression.</p>
+      <ul class="issue-list">
+        <li>Meta descriptions are the text that appears under each result in Google — they directly influence whether someone clicks your result or a competitor's</li>
+        <li>None of the 24 pages have a meta description set in Yoast</li>
+        <li>Google is falling back to the first line of page content, which rarely reads well in a search context</li>
+      </ul>
 
       <div class="rec-box">
         <h4>Recommendation</h4>
@@ -796,7 +871,11 @@
         <h3 class="issue-title">Five consultant pages have non-descriptive URLs</h3>
       </div>
 
-      <p>Several associate consultant profile pages were created by duplicating a template without updating the URL. The result is a set of pages with addresses like:</p>
+      <ul class="issue-list">
+        <li>Five consultant pages were duplicated from a template without updating the URL slug</li>
+        <li>Two pages are correctly named — <code>/associate-consultant-danielle-ford/</code> and <code>/associate-consultant-victoria-white/</code> — all pages should follow this pattern</li>
+        <li>Generic numeric URLs provide no SEO value and look unprofessional if shared</li>
+      </ul>
 
       <div class="source-quote">
         childhoodmatters.co.uk<span class="key">/associate-consultant-2/</span><br>
@@ -805,8 +884,6 @@
         childhoodmatters.co.uk<span class="key">/associate-consultant-5/</span><br>
         childhoodmatters.co.uk<span class="key">/associate-consultant-6/</span>
       </div>
-
-      <p>Two pages are correctly named — <code>/associate-consultant-danielle-ford/</code> and <code>/associate-consultant-victoria-white/</code>. All pages should follow this pattern. Generic numeric URLs provide no SEO value, cannot rank for any search term, and look unprofessional if ever shared directly.</p>
 
       <div class="rec-box">
         <h4>Recommendation</h4>
@@ -825,7 +902,12 @@
         <h3 class="issue-title">No Google Business Profile or local SEO signals</h3>
       </div>
 
-      <p>There is no physical or registered address listed on the contact page, in the footer, or anywhere else on the site. A Google Business Profile does not appear to be set up. These are important for trust and for appearing in local/regional searches — even for a national consultancy, having a verifiable business presence matters.</p>
+      <ul class="issue-list">
+        <li>No physical or registered address appears anywhere on the site</li>
+        <li>No Google Business Profile appears to be set up</li>
+        <li>Important for trust and for appearing in regional or location-based searches</li>
+        <li>Google Reviews via a Business Profile are one of the highest-trust signals available — and they're free</li>
+      </ul>
 
       <div class="rec-box">
         <h4>Recommendation</h4>
@@ -842,7 +924,10 @@
   <section id="content">
     <p class="section-label">Section 4 — Content &amp; Conversion</p>
     <h2 class="section-title">The site informs,<br>but doesn't yet convert</h2>
-    <p class="section-intro">A website for a consultancy business should not only describe your services — it should actively build trust, handle objections, and move interested visitors towards making an enquiry. Several content gaps are currently reducing the site's effectiveness as a business development tool.</p>
+    <ul class="section-intro-list">
+      <li>The site describes services well but is not yet working hard enough as a business development tool</li>
+      <li>Several content gaps are reducing trust and making it harder for visitors to take the next step</li>
+    </ul>
 
     <div class="issue">
       <div class="issue-header">
@@ -850,9 +935,12 @@
         <h3 class="issue-title">Testimonials are thin and anonymous</h3>
       </div>
 
-      <p>The testimonials page contains four quotes. None include the reviewer's name, their school or organisation, or a verifiable source. They are attributed only to generic descriptors such as "Head of Secondary, Community Special School."</p>
-
-      <p>For a consultancy working with schools, trusts, and local authorities, unverifiable anonymous quotes carry very little weight with the decision-makers your business needs to convince. A headteacher or trust CEO commissioning consultancy services at this level will want to know who has worked with you before, and may want the option to speak to them.</p>
+      <ul class="issue-list">
+        <li>Only four testimonials on the site — all anonymous, with no name, school, or organisation attached</li>
+        <li>Attributed only to generic descriptors such as "Head of Secondary, Community Special School"</li>
+        <li>Headteachers and trust leaders commissioning consultancy at this level expect verifiable references</li>
+        <li>Anonymous quotes carry very little weight with this audience</li>
+      </ul>
 
       <div class="screenshot-wrap">
         <div class="screenshot-bar">
@@ -882,7 +970,12 @@
         <h3 class="issue-title">No case studies — the most persuasive content type is missing</h3>
       </div>
 
-      <p>There are no case studies anywhere on the site. For a consultancy, case studies are consistently the highest-converting content type. A brief account of a challenge a school or family faced, the approach Childhood Matters took, and the outcome achieved — improved attendance, a successful Ofsted outcome, a child reintegrating into education, a family better equipped to advocate — demonstrates real impact in a way that generic service descriptions cannot.</p>
+      <ul class="issue-list">
+        <li>No case studies exist anywhere on the site</li>
+        <li>For a consultancy, case studies are consistently the highest-converting content type</li>
+        <li>A short account of the challenge, the approach, and the outcome — improved attendance, a positive Ofsted, a child back in education — is far more persuasive than a service description alone</li>
+        <li>Schools or families who prefer anonymity can be presented without names</li>
+      </ul>
 
       <div class="rec-box">
         <h4>Recommendation</h4>
@@ -902,7 +995,11 @@
         <h3 class="issue-title">No pricing information on service pages</h3>
       </div>
 
-      <p>The site describes named service packages across attendance, inclusion/SEND, and safeguarding, but none include any indication of cost. While bespoke consultancy is naturally quote-based, the complete absence of any pricing context creates friction. Some visitors will move on rather than make an enquiry simply to find out whether your services are within their budget.</p>
+      <ul class="issue-list">
+        <li>Named packages exist for attendance, inclusion/SEND, and safeguarding — but none include any indication of cost</li>
+        <li>Some visitors will leave rather than make an enquiry just to find out if the service is within budget</li>
+        <li>Even a starting-from price or day rate range removes that barrier</li>
+      </ul>
 
       <div class="screenshot-wrap">
         <div class="screenshot-bar">
@@ -931,7 +1028,12 @@
         <h3 class="issue-title">Contact page is missing key information</h3>
       </div>
 
-      <p>The contact page provides a phone number and email address, which is positive. However, it is missing a physical or registered business address, a response time commitment, and any indication of what happens after a form is submitted. These small details reduce uncertainty and increase the likelihood that someone follows through with an enquiry.</p>
+      <ul class="issue-list">
+        <li>Phone number and email are present — good</li>
+        <li>No physical or registered business address</li>
+        <li>No response time commitment — visitors don't know what to expect after submitting the form</li>
+        <li>No indication of next steps — these small details reduce uncertainty and increase conversions</li>
+      </ul>
 
       <div class="rec-box">
         <h4>Recommendation</h4>
@@ -949,14 +1051,22 @@
   <section id="ux">
     <p class="section-label">Section 5 — User Experience</p>
     <h2 class="section-title">Consistency and trust signals<br>need strengthening</h2>
-    <p class="section-intro">The overall layout and navigation of the site is clear. The areas for improvement here are about completing what has been started and ensuring every page projects the same level of professionalism.</p>
+    <ul class="section-intro-list">
+      <li>Layout and navigation are clear — no major structural issues</li>
+      <li>The areas here are about completing what has been started and ensuring every page is consistent</li>
+    </ul>
 
     <div class="issue">
       <div class="issue-header">
         <span class="issue-badge badge-important">Important</span>
         <h3 class="issue-title">No legal links in the footer</h3>
       </div>
-      <p>The site footer contains no links to a Privacy Policy, Cookie Policy, or Terms and Conditions. Visitors expect to find legal information in the footer, and their absence — particularly for a business working with schools, families, and children — reduces confidence in the organisation's professionalism. Once the legal pages described in Section 1 are created, links must be added to the footer of every page.</p>
+      <ul class="issue-list">
+        <li>No Privacy Policy, Cookie Policy, or Terms links in the footer</li>
+        <li>Visitors — particularly schools and professional bodies — expect to find these immediately</li>
+        <li>Their absence reduces trust, especially for a business working with children and families</li>
+        <li>Once the legal pages from Section 1 are created, they must be linked in the footer on every page</li>
+      </ul>
     </div>
 
     <div class="divider"></div>
@@ -966,7 +1076,11 @@
         <span class="issue-badge badge-improve">Improve</span>
         <h3 class="issue-title">Associate consultant profiles are inconsistent</h3>
       </div>
-      <p>The associate consultant team is a significant selling point — eight experienced professionals covering a wide range of specialisms. However, the profile pages vary considerably in quality and completeness. Some appear to be placeholder pages that have not been fully built out. All eight profiles should receive equal treatment: a full biography, areas of specialism, relevant qualifications, a professional photograph, and a LinkedIn link.</p>
+      <ul class="issue-list">
+        <li>Eight associate consultants — a genuine selling point that should be showcased properly</li>
+        <li>Profile pages vary considerably in quality; some appear to be unfilled placeholders</li>
+        <li>All eight should have equal treatment: full biography, specialisms, qualifications, photo, and LinkedIn link</li>
+      </ul>
 
       <div class="screenshot-wrap">
         <div class="screenshot-bar">
@@ -985,7 +1099,11 @@
         <span class="issue-badge badge-improve">Improve</span>
         <h3 class="issue-title">No FAQ section</h3>
       </div>
-      <p>There is no FAQ content anywhere on the site. Common questions about who your services are for, how engagements work, whether you serve individual families or only institutions, and how to get started are unanswered without contacting you directly. An FAQ section — on a dedicated page or embedded within service pages — reduces friction and handles objections proactively.</p>
+      <ul class="issue-list">
+        <li>No FAQ content anywhere on the site</li>
+        <li>Common questions — who the services are for, how engagements work, whether you serve families or only institutions — go unanswered unless a visitor contacts you directly</li>
+        <li>An FAQ section reduces friction and handles objections before they become a reason not to enquire</li>
+      </ul>
     </div>
   </section>
 
@@ -993,7 +1111,10 @@
   <section id="plan">
     <p class="section-label">Section 6 — Action Plan</p>
     <h2 class="section-title">A clear path forward,<br>in order of priority</h2>
-    <p class="section-intro">The following plan organises every recommended action into four phases. We propose to work through these in sequence, beginning immediately with the legal and compliance items.</p>
+    <ul class="section-intro-list">
+      <li>Every recommended action is organised into four phases below</li>
+      <li>I propose working through these in sequence, starting immediately with the legal items</li>
+    </ul>
 
     <div class="action-tiers">
       <div class="action-tier">
