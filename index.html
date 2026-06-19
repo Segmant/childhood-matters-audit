@@ -251,6 +251,7 @@
     .badge-important { background: var(--amber); color: var(--dark); }
     .badge-improve { background: var(--light); color: var(--muted); }
     .badge-opportunity { background: var(--dark); color: var(--white); }
+    .badge-practice { background: var(--red); color: var(--white); font-size: .85rem; font-weight: 700; min-width: 2rem; }
 
     .issue-title {
       font-family: var(--serif-h);
@@ -586,6 +587,7 @@
     <li><a href="#content">Content</a></li>
     <li><a href="#ux">Experience</a></li>
     <li><a href="#plan">Action Plan</a></li>
+    <li><a href="#practices">My Approach</a></li>
   </ul>
 </nav>
 
@@ -1161,6 +1163,73 @@
           <li>Monitor Search Console for ranking improvements</li>
         </ol>
       </div>
+    </div>
+  </section>
+
+  <!-- ── WORKING PRACTICES ─────────────────────── -->
+  <section id="practices">
+    <p class="section-label">Section 7 — My Standard Working Practices</p>
+    <h2 class="section-title">How I build every site<br>I take on</h2>
+    <ul class="section-intro-list">
+      <li>Every site I build is delivered on the same proven technical foundation</li>
+      <li>These aren't optional extras — they are standard on every project and make a tangible difference to speed, security, stability, and long-term value</li>
+      <li>Below is exactly what I would implement for Childhood Matters from day one</li>
+    </ul>
+
+    <div class="issue">
+      <div class="issue-header">
+        <span class="issue-badge badge-practice">1</span>
+        <h3 class="issue-title">Your site added to my Cloudflare account for speed and security</h3>
+      </div>
+      <ul class="issue-list">
+        <li><strong>Global CDN (Content Delivery Network)</strong> — your site's assets are served from data centres worldwide, meaning visitors load the site from a location physically close to them rather than from a single server. Pages load significantly faster for users anywhere in the UK and beyond</li>
+        <li><strong>DDoS protection</strong> — Cloudflare sits in front of your server and absorbs malicious traffic at scale, protecting the site from distributed attacks that could otherwise take it offline entirely</li>
+        <li><strong>Web Application Firewall (WAF)</strong> — intelligent rules that block malicious bots, scrapers, and known attack patterns before they ever reach your site or server</li>
+        <li><strong>Free SSL/TLS certificate</strong> — end-to-end encryption between visitor and server, automatically renewed, with HTTP automatically upgraded to HTTPS</li>
+        <li><strong>Caching at the edge</strong> — static assets and pages are cached at Cloudflare's network level, dramatically reducing server load and improving response times even during traffic spikes</li>
+        <li><strong>Bot management</strong> — automated filtering of bad bots that inflate analytics figures, scrape content, or probe for vulnerabilities</li>
+        <li><strong>Always-on protection</strong> — even if the origin server has a brief issue, Cloudflare can serve a cached version of the site to visitors so it remains accessible</li>
+        <li><strong>Real-time analytics</strong> — Cloudflare provides an additional layer of traffic analytics, including blocked threats and bandwidth saved, at no cost</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="issue">
+      <div class="issue-header">
+        <span class="issue-badge badge-practice">2</span>
+        <h3 class="issue-title">Built on Oxygen Builder with WordPress — not Elementor</h3>
+      </div>
+      <ul class="issue-list">
+        <li><strong>Significantly faster load times</strong> — Elementor loads a substantial amount of its own CSS and JavaScript on every page regardless of what is actually used. Oxygen generates only the code the page needs, resulting in leaner, faster pages that score better on Google PageSpeed and Core Web Vitals</li>
+        <li><strong>Cleaner HTML output</strong> — Elementor wraps every element in multiple layers of divs with inline styles. Oxygen produces clean, minimal markup that is easier for Google to parse and index, and easier for a developer to maintain</li>
+        <li><strong>Better SEO by default</strong> — Google uses page speed and Core Web Vitals as ranking signals. A site built in Oxygen consistently outperforms the same design built in Elementor on these metrics, which translates directly into better search visibility</li>
+        <li><strong>No reliance on a third-party plugin for layout</strong> — Elementor is a plugin dependency. If it is abandoned, breaks, or conflicts with a WordPress update, every page on the site can be affected. Oxygen compiles its designs into the theme directly, making it far more robust</li>
+        <li><strong>Full design control</strong> — Oxygen gives complete pixel-level control over every element with no pre-built widget constraints. The design is built to specification, not fitted around a drag-and-drop template</li>
+        <li><strong>No shortcode lock-in</strong> — Elementor embeds shortcodes throughout page content. If the plugin is ever deactivated, those shortcodes appear as raw text and pages break. Oxygen does not do this</li>
+        <li><strong>Reduced plugin overhead</strong> — many things Elementor requires additional plugins for (custom CSS, dynamic data, conditionals) are built natively into Oxygen, resulting in fewer active plugins and a more stable WordPress installation</li>
+        <li><strong>Built for developers, not just designers</strong> — Oxygen supports custom PHP, custom classes, and direct CSS/JS injection at a component level, making it far more powerful for building bespoke, functional sites</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="issue">
+      <div class="issue-header">
+        <span class="issue-badge badge-practice">3</span>
+        <h3 class="issue-title">Hosted on my own managed VPS server</h3>
+      </div>
+      <ul class="issue-list">
+        <li><strong>Dedicated resources</strong> — on shared hosting (common with many generic providers), your site shares a server with hundreds of others. A spike in traffic on a neighbouring site can slow yours down. On a VPS, your site has its own allocated CPU and RAM that no one else can consume</li>
+        <li><strong>Full server control</strong> — I configure the server specifically for WordPress performance: PHP version, memory limits, caching layers, database optimisation, and server-level redirects are all set to best-practice standards rather than generic defaults</li>
+        <li><strong>Optimised server stack</strong> — the server runs nginx (faster than Apache for WordPress), PHP 8.x, and Redis object caching — a combination that delivers significantly better performance than standard managed WordPress hosting</li>
+        <li><strong>Enhanced security posture</strong> — I harden the server at the OS level: firewall rules, fail2ban for brute-force protection, SSH key authentication only, regular security patching, and automatic malware scanning</li>
+        <li><strong>Automated daily backups</strong> — full site and database backups are taken automatically and stored offsite. In the event of any issue, the site can be restored to a previous point quickly and without data loss</li>
+        <li><strong>Staging environment</strong> — a private staging version of the site can be maintained on the same server, allowing updates, design changes, and new features to be tested before they go live</li>
+        <li><strong>No arbitrary resource caps</strong> — generic managed hosting plans impose limits on traffic, storage, or database queries. On the VPS, resource limits are defined by the server specification, not an artificial plan tier</li>
+        <li><strong>Single point of contact</strong> — hosting, performance, security, and the site itself are all managed by me. There is no finger-pointing between a hosting provider and a developer when something needs attention</li>
+        <li><strong>Cost efficiency at scale</strong> — as more sites are hosted on the same VPS, the per-site cost of hosting reduces, making it a more economical long-term arrangement than individual managed hosting plans</li>
+      </ul>
     </div>
   </section>
 
