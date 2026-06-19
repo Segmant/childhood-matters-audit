@@ -253,15 +253,6 @@
     .badge-opportunity { background: var(--dark); color: var(--white); }
     .badge-practice { background: var(--red); color: var(--white); font-size: .85rem; font-weight: 700; min-width: 2rem; }
 
-    /* ── LAYMAN'S TERMS ────────────────────────── */
-    .layman {
-      display: block;
-      font-size: .8rem;
-      color: var(--muted);
-      font-style: italic;
-      margin-top: .25rem;
-      padding-left: .1rem;
-    }
 
     .issue-title {
       font-family: var(--serif-h);
@@ -568,7 +559,6 @@
   <div class="cover-body">
     <p class="cover-label">Website Audit &amp; Proposal &mdash; June 2026</p>
     <h1>A review of<br><em>Childhood Matters</em><br>childhoodmatters.co.uk</h1>
-    <p class="cover-sub">Prepared exclusively for Sandra Tibbles and the team at Childhood Matters Consulting Ltd.</p>
   </div>
 
   <div class="cover-footer">
@@ -598,6 +588,7 @@
     <li><a href="#ux">Experience</a></li>
     <li><a href="#plan">Action Plan</a></li>
     <li><a href="#practices">My Approach</a></li>
+    <li><a href="#design">Design</a></li>
   </ul>
 </nav>
 
@@ -1192,30 +1183,14 @@
         <h3 class="issue-title">Your site added to my Cloudflare account for speed and security</h3>
       </div>
       <ul class="issue-list">
-        <li><strong>Global CDN (Content Delivery Network)</strong> — your site's assets are served from data centres worldwide, meaning visitors load the site from a location physically close to them rather than from a single server
-          <span class="layman">In plain English: your website loads quickly for everyone, wherever they are — not just people near the server</span>
-        </li>
-        <li><strong>DDoS protection</strong> — Cloudflare sits in front of your server and absorbs malicious traffic at scale, protecting the site from distributed attacks that could otherwise take it offline entirely
-          <span class="layman">In plain English: if someone tries to flood your website with fake traffic to knock it offline, Cloudflare stops it before it ever reaches you</span>
-        </li>
-        <li><strong>Web Application Firewall (WAF)</strong> — intelligent rules that block malicious bots, scrapers, and known attack patterns before they ever reach your site or server
-          <span class="layman">In plain English: a security filter that blocks hackers and automated attacks the moment they appear — before they can do any damage</span>
-        </li>
-        <li><strong>Free SSL/TLS certificate</strong> — end-to-end encryption between visitor and server, automatically renewed, with HTTP automatically upgraded to HTTPS
-          <span class="layman">In plain English: this is the padlock you see in the browser address bar — it means every visitor's connection to your site is private and secure</span>
-        </li>
-        <li><strong>Caching at the edge</strong> — static assets and pages are cached at Cloudflare's network level, dramatically reducing server load and improving response times even during traffic spikes
-          <span class="layman">In plain English: your most visited pages are stored and ready to go, so they load almost instantly instead of being built fresh every time someone visits</span>
-        </li>
-        <li><strong>Bot management</strong> — automated filtering of bad bots that inflate analytics figures, scrape content, or probe for vulnerabilities
-          <span class="layman">In plain English: filters out fake automated visitors so your analytics only show real people, and stops programs scanning the site for weaknesses</span>
-        </li>
-        <li><strong>Always-on protection</strong> — even if the origin server has a brief issue, Cloudflare can serve a cached version of the site to visitors so it remains accessible
-          <span class="layman">In plain English: if there's ever a brief problem with the server, your website stays online for visitors — they won't see an error page</span>
-        </li>
-        <li><strong>Real-time analytics</strong> — Cloudflare provides an additional layer of traffic analytics, including blocked threats and bandwidth saved, at no cost
-          <span class="layman">In plain English: a live dashboard showing how much traffic your site receives, how many threats were blocked, and how fast it's performing — all included for free</span>
-        </li>
+        <li><strong>Faster loading everywhere</strong> — your website loads quickly for visitors wherever they are, not just people near the server. Cloudflare serves your site from locations around the world so nobody is waiting</li>
+        <li><strong>Protection from attacks</strong> — if anyone tries to flood your site with fake traffic to knock it offline, Cloudflare absorbs it and keeps the site running. You'd never even know it happened</li>
+        <li><strong>Security at the front door</strong> — hackers and automated attack programs are identified and blocked before they ever reach your website, stopping problems before they can start</li>
+        <li><strong>The padlock in the browser</strong> — every visitor's connection to your site is private and encrypted. This is the padlock icon in the address bar that people look for before trusting a website with their details</li>
+        <li><strong>Pages that load instantly</strong> — your most visited pages are stored and ready to serve immediately rather than being loaded fresh every time, making the experience feel noticeably faster</li>
+        <li><strong>Genuine visitor figures</strong> — automated programs pretending to be real visitors are filtered out, so your analytics show you actual people rather than inflated numbers</li>
+        <li><strong>Your site stays live</strong> — if there is ever a brief problem with the server, your website remains accessible to visitors. They will never see an error page</li>
+        <li><strong>A clear picture of performance</strong> — a live dashboard shows how much traffic the site receives, how many threats have been blocked, and how fast it is loading — all included at no extra cost</li>
       </ul>
     </div>
 
@@ -1227,30 +1202,14 @@
         <h3 class="issue-title">Built on Oxygen Builder with WordPress — not Elementor</h3>
       </div>
       <ul class="issue-list">
-        <li><strong>Significantly faster load times</strong> — Elementor loads a large amount of its own code on every page regardless of what is actually used. Oxygen generates only the code each page needs, resulting in leaner, faster pages that score better on Google PageSpeed and Core Web Vitals
-          <span class="layman">In plain English: pages built in Oxygen load noticeably faster than the same pages built in Elementor — because there's no unnecessary code running in the background</span>
-        </li>
-        <li><strong>Cleaner HTML output</strong> — Elementor wraps every element in multiple layers of unnecessary code with inline styles. Oxygen produces clean, minimal markup that is easier for Google to read and index
-          <span class="layman">In plain English: the underlying code is neat and tidy — Google finds it easier to understand what your page is about, which helps your rankings</span>
-        </li>
-        <li><strong>Better SEO by default</strong> — Google uses page speed and Core Web Vitals as ranking signals. A site built in Oxygen consistently outperforms the same design built in Elementor on these tests, which translates directly into better search visibility
-          <span class="layman">In plain English: Google rewards fast, well-coded websites with better rankings — Oxygen gives your site a head start over competitors still using Elementor</span>
-        </li>
-        <li><strong>No reliance on a third-party plugin for layout</strong> — Elementor is a plugin that must be kept active at all times. If it breaks or conflicts with a WordPress update, every page on the site is affected. Oxygen compiles its output directly into the site, making it far more robust
-          <span class="layman">In plain English: your site's layout doesn't depend on a third-party company's software staying active and up to date — it's built into the site itself</span>
-        </li>
-        <li><strong>Full design control</strong> — Oxygen gives complete pixel-level control over every element with no pre-built widget constraints. The design is built to your exact specification, not fitted around a template
-          <span class="layman">In plain English: everything looks exactly as designed — not "close enough" because a drag-and-drop widget wouldn't quite do what was needed</span>
-        </li>
-        <li><strong>No shortcode lock-in</strong> — Elementor embeds shortcodes throughout page content. If the plugin is ever removed or deactivated, those shortcodes appear as broken text and pages fall apart. Oxygen does not do this
-          <span class="layman">In plain English: your content is never held hostage by the page builder — if anything ever changes, your text and content remain completely intact</span>
-        </li>
-        <li><strong>Reduced plugin overhead</strong> — many things Elementor requires additional plugins to achieve are built natively into Oxygen, resulting in fewer active plugins and a more stable, faster WordPress installation
-          <span class="layman">In plain English: fewer plugins running means fewer things that can go wrong, break after an update, or slow the site down</span>
-        </li>
-        <li><strong>Built for developers, not just designers</strong> — Oxygen supports custom code at a component level, making it far more powerful for building bespoke, functional sites without workarounds
-          <span class="layman">In plain English: if you ever need something bespoke — a custom form, a special layout, a unique feature — it can be built properly rather than patched together</span>
-        </li>
+        <li><strong>Pages load faster</strong> — Elementor loads a large amount of unnecessary code on every page whether it's needed or not. Oxygen only loads what each page actually requires, making every page noticeably quicker for visitors</li>
+        <li><strong>Google understands the site better</strong> — the code Oxygen produces is clean and well-structured, making it much easier for Google to read and understand what each page is about. This directly helps search rankings</li>
+        <li><strong>A head start in search results</strong> — Google measures how fast and well-built a website is as part of how it decides where to rank it. A site built in Oxygen consistently scores higher on these tests than the same site built in Elementor</li>
+        <li><strong>The site doesn't depend on a third party</strong> — Elementor is a separate company's software that has to stay active and up to date at all times. If it breaks or falls out of date, every page on the site is affected. Oxygen builds the layout directly into the site so this risk doesn't exist</li>
+        <li><strong>Everything looks exactly as designed</strong> — there are no constraints from pre-built templates or widgets. The design is built precisely to specification rather than adapted around what a tool will and won't allow</li>
+        <li><strong>Your content is never held hostage</strong> — Elementor ties itself into your page content in a way that can cause pages to break if the tool is ever removed. Oxygen doesn't do this — your text and content always remain intact regardless</li>
+        <li><strong>A leaner, more stable website</strong> — features that Elementor requires extra plugins to achieve are built directly into Oxygen. Fewer tools running in the background means fewer things that can slow the site down or break after an update</li>
+        <li><strong>No limits on what can be built</strong> — if you ever need something unique — a custom enquiry process, a specific layout, an interactive feature — it can be built properly from the ground up rather than worked around</li>
       </ul>
     </div>
 
@@ -1262,33 +1221,112 @@
         <h3 class="issue-title">Hosted on my own managed VPS server</h3>
       </div>
       <ul class="issue-list">
-        <li><strong>Dedicated resources</strong> — on shared hosting, your site shares a server with hundreds of others. A spike in traffic on a neighbouring site can slow yours down. On a VPS, your site has its own allocated CPU and RAM that no one else can consume
-          <span class="layman">In plain English: your website has its own private space on the server — what other websites do cannot affect yours</span>
-        </li>
-        <li><strong>Full server control</strong> — I configure the server specifically for WordPress: PHP version, memory limits, caching, database optimisation, and redirects are all set to best-practice standards rather than generic defaults
-          <span class="layman">In plain English: every setting on the server is tuned for your site specifically — not left on the out-of-the-box defaults that most hosting companies use</span>
-        </li>
-        <li><strong>Optimised server stack</strong> — the server runs nginx, PHP 8.x, and Redis object caching — a combination that delivers significantly better performance than standard managed WordPress hosting
-          <span class="layman">In plain English: the software powering the server is chosen and configured for speed — the same way a performance car needs the right engine, not just any engine</span>
-        </li>
-        <li><strong>Enhanced security</strong> — the server is hardened at the operating system level: firewall rules, brute-force protection, key-only login access, regular security patching, and automatic malware scanning
-          <span class="layman">In plain English: the server is locked down at every level — not just the website itself, but the machine it runs on</span>
-        </li>
-        <li><strong>Automated daily backups</strong> — full site and database backups are taken automatically every day and stored offsite. The site can be restored to any previous point quickly and without data loss
-          <span class="layman">In plain English: a complete copy of your website is saved every single day — if anything ever goes wrong, nothing is lost and it can be restored quickly</span>
-        </li>
-        <li><strong>Staging environment</strong> — a private copy of the live site can be maintained on the same server, allowing updates, design changes, and new features to be fully tested before going live
-          <span class="layman">In plain English: changes are tested on a hidden copy of the site first — visitors never see anything half-finished or broken</span>
-        </li>
-        <li><strong>No arbitrary resource caps</strong> — generic hosting plans impose artificial limits on traffic, storage, or database queries. On the VPS, limits are defined by the actual server specification, not a plan tier
-          <span class="layman">In plain English: there are no surprise "you've hit your limit" messages — the site can grow without being held back by an arbitrary hosting plan</span>
-        </li>
-        <li><strong>Single point of contact</strong> — hosting, performance, security, and the website itself are all managed by me. There is no confusion about who to call when something needs attention
-          <span class="layman">In plain English: one person handles everything — no being passed between a hosting company and a web developer while a problem sits unresolved</span>
-        </li>
-        <li><strong>Cost efficiency at scale</strong> — as more sites are hosted on the same VPS, the per-site hosting cost reduces, making it a more economical long-term arrangement than separate managed hosting plans
-          <span class="layman">In plain English: hosting on my server is better value than paying separately for a managed hosting plan — and the quality of service is higher</span>
-        </li>
+        <li><strong>Your site has its own private space</strong> — most budget hosting puts hundreds of websites on the same server. If another site gets a surge of visitors it can slow yours down. On my server, your site has its own dedicated resources that nobody else can touch</li>
+        <li><strong>Configured for your site, not generic defaults</strong> — every setting on the server is tuned specifically for how your website works, rather than left on the out-of-the-box settings that most hosting companies apply to everyone the same way</li>
+        <li><strong>Built for speed from the ground up</strong> — the software running the server is specifically chosen for performance. Most standard hosting uses whatever came installed. My server is set up the way a specialist would set it up — properly</li>
+        <li><strong>Locked down at every level</strong> — security isn't just applied to the website — it runs all the way down to the machine itself. Login access is tightly restricted, threats are detected and blocked automatically, and the server is kept patched and up to date at all times</li>
+        <li><strong>A complete backup taken every day</strong> — a full copy of the website and all its content is saved automatically every single day and stored separately. If anything ever goes wrong for any reason, nothing is lost and the site can be restored quickly</li>
+        <li><strong>Changes are tested before they go live</strong> — updates, redesigns, and new features are applied to a private copy of the site first and checked thoroughly before visitors ever see them. Nothing unfinished or broken will ever appear on the live site</li>
+        <li><strong>No artificial limits on growth</strong> — standard hosting plans put caps on how much traffic, storage, or activity your site is allowed. My server doesn't work that way — the site can grow without suddenly hitting a wall that requires upgrading to a more expensive plan</li>
+        <li><strong>One person responsible for everything</strong> — I manage the hosting, the security, and the website itself. If something needs attention there is no confusion about who to call, no being passed between departments, and no problem sitting unresolved</li>
+        <li><strong>Better value than standard managed hosting</strong> — hosting on my server costs less than a typical managed WordPress hosting plan while delivering a higher level of performance, security, and personal service</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── DESIGN DISCOVERY ──────────────────────── -->
+  <section id="design">
+    <p class="section-label">Section 8 — Design Direction</p>
+    <h2 class="section-title">Before the redesign begins,<br>I need your input</h2>
+    <ul class="section-intro-list">
+      <li>The audit above covers what needs fixing — but a redesign also means making creative decisions that only you can answer</li>
+      <li>None of the following was covered in our initial conversation, so I need your thoughts before any design work starts</li>
+      <li>There are no right or wrong answers — these questions exist to make sure the end result reflects who Childhood Matters is and who it is trying to reach</li>
+    </ul>
+
+    <div class="issue">
+      <div class="issue-header">
+        <span class="issue-badge badge-improve">Design</span>
+        <h3 class="issue-title">Colours and overall feel</h3>
+      </div>
+      <ul class="issue-list">
+        <li><strong>Are you happy with the current colour scheme?</strong> — the site currently uses greens and warm neutrals. Is this something you want to keep, evolve, or replace entirely?</li>
+        <li><strong>What feeling should the site give a visitor?</strong> — professional and authoritative, warm and approachable, calm and reassuring, or something else? The audience includes both school leaders and parents, who may respond to quite different tones</li>
+        <li><strong>Are there any colours you specifically want to avoid?</strong> — sometimes brand history, competitor associations, or personal preference rules certain things out</li>
+        <li><strong>Do you have an existing brand colour palette?</strong> — if there are colours used in letterheads, presentations, or printed materials, the website should reflect those</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="issue">
+      <div class="issue-header">
+        <span class="issue-badge badge-improve">Design</span>
+        <h3 class="issue-title">Logo</h3>
+      </div>
+      <ul class="issue-list">
+        <li><strong>Is the current logo staying?</strong> — if a new logo or updated version is needed, this needs to be scoped and agreed before the site design begins, as it affects everything</li>
+        <li><strong>Do you have the original logo files?</strong> — high-resolution vector files (SVG or AI format) are needed for a proper implementation. If only a low-quality image exists, a redraw may be required</li>
+        <li><strong>Are there any brand guidelines in place?</strong> — if a document exists specifying how the logo should and shouldn't be used, I need to see it before starting</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="issue">
+      <div class="issue-header">
+        <span class="issue-badge badge-improve">Design</span>
+        <h3 class="issue-title">Layout and structure</h3>
+      </div>
+      <ul class="issue-list">
+        <li><strong>Are there any pages or sections of the current site you are happy with and want to keep?</strong> — it helps to know what is working so it is not discarded unnecessarily</li>
+        <li><strong>Are there any pages or sections you actively dislike?</strong> — knowing what isn't working is just as useful as knowing what is</li>
+        <li><strong>How should the homepage be structured?</strong> — what is the single most important thing a visitor should see or do when they land on the site? This shapes the entire layout</li>
+        <li><strong>Should the services be presented differently?</strong> — currently they are listed as separate pages. Would a more visual approach — cards, icons, a grid — work better for how you want the business to come across?</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="issue">
+      <div class="issue-header">
+        <span class="issue-badge badge-improve">Design</span>
+        <h3 class="issue-title">Websites you like and dislike</h3>
+      </div>
+      <ul class="issue-list">
+        <li><strong>Are there any websites — in any industry — that you feel represent the kind of look and feel you want?</strong> — even rough examples in completely unrelated fields give a clear direction. A link or screenshot is enough</li>
+        <li><strong>Are there any competitor or similar consultancy websites you have seen and disliked?</strong> — knowing what to avoid is equally valuable</li>
+        <li><strong>What is your honest opinion of the current site's design?</strong> — is it broadly in the right direction and just needs refreshing, or does it need a completely new approach?</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="issue">
+      <div class="issue-header">
+        <span class="issue-badge badge-improve">Design</span>
+        <h3 class="issue-title">Photography and imagery</h3>
+      </div>
+      <ul class="issue-list">
+        <li><strong>Is there a bank of professional photography available?</strong> — good photography makes an enormous difference to how a site feels. If professional images of the team, settings, or work in action exist, they should be used throughout</li>
+        <li><strong>If not, is professional photography something you would consider investing in?</strong> — stock photography is an option but original images of real people and real places are always more convincing to a prospective client</li>
+        <li><strong>Are there any images on the current site you want to keep?</strong> — and any that should definitely be removed or replaced?</li>
+        <li><strong>Should imagery feature children?</strong> — given the nature of the work, there may be safeguarding considerations that affect what imagery is appropriate to use, particularly on public-facing pages</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="issue">
+      <div class="issue-header">
+        <span class="issue-badge badge-improve">Design</span>
+        <h3 class="issue-title">Priorities and timeline</h3>
+      </div>
+      <ul class="issue-list">
+        <li><strong>Is there a deadline for when the new site needs to be live?</strong> — a target date helps structure the project and ensures the legal compliance issues are resolved in time</li>
+        <li><strong>Is everything being redesigned, or are some sections being carried over as-is?</strong> — a full redesign and a targeted refresh are very different scopes of work</li>
+        <li><strong>Who will be the main point of contact for feedback and approvals?</strong> — knowing who has final sign-off at the start avoids delays later</li>
+        <li><strong>Is there any existing content — text, images, documents — that needs to be prepared or written before the build can start?</strong> — the faster content is ready, the faster the site can be completed</li>
       </ul>
     </div>
   </section>
