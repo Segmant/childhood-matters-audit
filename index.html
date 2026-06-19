@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Audit & Proposal — Childhood Matters Consulting Ltd</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Merriweather:ital,wght@0,200;0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:     #FF474D;
+      --light:   #ECECEC;
+      --text:    #3a3a3a;
+      --muted:   #7A7A7A;
+      --dark:    #1a1a1a;
+      --white:   #ffffff;
+      --amber:   #FFBC7D;
+      --serif-h: 'Baskervville', Georgia, serif;
+      --serif-b: 'Merriweather', Georgia, serif;
+      --radius:  4px;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--serif-b);
+      font-weight: 300;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.8;
+    }
+
+    /* ── COVER ─────────────────────────────────── */
+    .cover {
+      background: var(--dark);
+      color: var(--white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 3.5rem 5rem;
+    }
+
+    .cover-logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .cover-logo svg { width: 44px; height: 44px; }
+
+    .cover-logo-name {
+      font-family: var(--serif-h);
+      font-size: 1.1rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    .cover-body { max-width: 700px; }
+
+    .cover-label {
+      font-family: var(--serif-h);
+      font-size: .8rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 1.5rem;
+    }
+
+    .cover h1 {
+      font-family: var(--serif-h);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    .cover h1 em {
+      font-style: italic;
+      color: var(--red);
+    }
+
+    .cover-sub {
+      font-size: .95rem;
+      color: #aaa;
+      font-weight: 200;
+      line-height: 1.7;
+      max-width: 500px;
+    }
+
+    .cover-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-top: 1px solid #333;
+      padding-top: 2rem;
+      font-size: .8rem;
+      color: #666;
+      font-family: var(--serif-h);
+      letter-spacing: .08em;
+    }
+
+    .cover-footer strong { color: var(--white); }
+
+    /* ── NAV ───────────────────────────────────── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--light);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: .9rem 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+
+    .nav-brand svg { width: 28px; height: 28px; }
+
+    .nav-brand span {
+      font-family: var(--serif-h);
+      font-size: .8rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      font-family: var(--serif-h);
+      font-size: .78rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--muted);
+      transition: color .2s;
+    }
+
+    nav a:hover { color: var(--red); }
+
+    /* ── LAYOUT ────────────────────────────────── */
+    .page { max-width: 1060px; margin: 0 auto; padding: 0 4rem; }
+
+    section { padding: 6rem 0; border-bottom: 1px solid var(--light); }
+    section:last-of-type { border-bottom: none; }
+
+    /* ── SECTION HEADERS ───────────────────────── */
+    .section-label {
+      font-family: var(--serif-h);
+      font-size: .75rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: var(--serif-h);
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--dark);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-intro {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 640px;
+      margin-bottom: 3.5rem;
+      line-height: 1.85;
+    }
+
+    /* ── SUMMARY ───────────────────────────────── */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5px;
+      background: var(--light);
+      border: 1.5px solid var(--light);
+      margin-bottom: 3rem;
+    }
+
+    .summary-card {
+      background: var(--white);
+      padding: 2rem 1.8rem;
+    }
+
+    .summary-card-label {
+      font-family: var(--serif-h);
+      font-size: .7rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: .5rem;
+    }
+
+    .summary-card-value {
+      font-family: var(--serif-h);
+      font-size: 1rem;
+      color: var(--dark);
+    }
+
+    .summary-card-value.red { color: var(--red); }
+    .summary-card-value.amber { color: #cc8800; }
+    .summary-card-value.green { color: #3a7a3a; }
+
+    /* ── ISSUE BLOCKS ──────────────────────────── */
+    .issue {
+      margin-bottom: 4.5rem;
+    }
+
+    .issue-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .issue-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif-h);
+      font-size: .65rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: .3rem .8rem;
+      border-radius: 2px;
+      white-space: nowrap;
+      margin-top: .25rem;
+      flex-shrink: 0;
+    }
+
+    .badge-critical { background: var(--red); color: var(--white); }
+    .badge-important { background: var(--amber); color: var(--dark); }
+    .badge-improve { background: var(--light); color: var(--muted); }
+    .badge-opportunity { background: var(--dark); color: var(--white); }
+
+    .issue-title {
+      font-family: var(--serif-h);
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1.3;
+    }
+
+    .issue p {
+      margin-bottom: 1rem;
+      font-size: .95rem;
+      color: var(--text);
+    }
+
+    .issue p:last-child { margin-bottom: 0; }
+
+    /* ── SCREENSHOTS ───────────────────────────── */
+    .screenshot-wrap {
+      margin: 2rem 0 1rem;
+      border: 1.5px solid var(--light);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .screenshot-bar {
+      background: #f5f5f5;
+      border-bottom: 1px solid var(--light);
+      padding: .6rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot-r { background: #ff5f57; }
+    .dot-y { background: #febc2e; }
+    .dot-g { background: #28c840; }
+
+    .url-bar {
+      flex: 1;
+      background: var(--white);
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      padding: .25rem .75rem;
+      font-family: 'Courier New', monospace;
+      font-size: .72rem;
+      color: var(--muted);
+    }
+
+    .screenshot-wrap img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .screenshot-caption {
+      background: var(--dark);
+      color: #ccc;
+      padding: .9rem 1.2rem;
+      font-size: .78rem;
+      font-family: var(--serif-h);
+      letter-spacing: .05em;
+      line-height: 1.5;
+    }
+
+    .screenshot-caption strong { color: var(--red); }
+
+    /* ── ANNOTATION ────────────────────────────── */
+    .annotation {
+      background: #fff8f8;
+      border-left: 3px solid var(--red);
+      padding: 1rem 1.4rem;
+      margin: 1.5rem 0;
+      font-size: .88rem;
+    }
+
+    .annotation strong {
+      display: block;
+      font-family: var(--serif-h);
+      font-size: .7rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: .4rem;
+    }
+
+    /* ── SOURCE CODE QUOTE ─────────────────────── */
+    .source-quote {
+      background: var(--dark);
+      color: #7ec8a4;
+      font-family: 'Courier New', monospace;
+      font-size: .8rem;
+      padding: 1.4rem 1.8rem;
+      border-radius: var(--radius);
+      margin: 1.5rem 0;
+      line-height: 1.7;
+      overflow-x: auto;
+    }
+
+    .source-quote .comment { color: #666; }
+    .source-quote .key { color: #79b8ff; }
+
+    /* ── RECOMMENDATION BOX ────────────────────── */
+    .rec-box {
+      background: #f9f9f9;
+      border: 1.5px solid var(--light);
+      padding: 1.8rem 2rem;
+      margin-top: 1.5rem;
+      border-radius: var(--radius);
+    }
+
+    .rec-box h4 {
+      font-family: var(--serif-h);
+      font-size: .7rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--dark);
+      margin-bottom: 1rem;
+    }
+
+    .rec-box ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .rec-box ul li {
+      font-size: .88rem;
+      padding: .4rem 0;
+      padding-left: 1.2rem;
+      position: relative;
+      color: var(--text);
+    }
+
+    .rec-box ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--red);
+      font-size: .8rem;
+    }
+
+    /* ── DIVIDER ───────────────────────────────── */
+    .divider {
+      height: 1px;
+      background: var(--light);
+      margin: 3rem 0;
+    }
+
+    /* ── ACTION PLAN ───────────────────────────── */
+    .action-tiers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2px;
+      background: var(--light);
+      border: 2px solid var(--light);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-top: 2rem;
+    }
+
+    .action-tier {
+      background: var(--white);
+      padding: 2.5rem 2rem;
+    }
+
+    .tier-label {
+      font-family: var(--serif-h);
+      font-size: .65rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      margin-bottom: .4rem;
+    }
+
+    .tier-label.tier-now { color: var(--red); }
+    .tier-label.tier-soon { color: #cc8800; }
+    .tier-label.tier-medium { color: var(--dark); }
+    .tier-label.tier-ongoing { color: var(--muted); }
+
+    .tier-title {
+      font-family: var(--serif-h);
+      font-size: 1.1rem;
+      color: var(--dark);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--light);
+    }
+
+    .action-tier ol {
+      padding-left: 1.2rem;
+    }
+
+    .action-tier li {
+      font-size: .85rem;
+      color: var(--text);
+      margin-bottom: .7rem;
+      line-height: 1.5;
+    }
+
+    /* ── FOOTER ────────────────────────────────── */
+    footer {
+      background: var(--dark);
+      color: #555;
+      padding: 3rem 5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+
+    .footer-logo svg { width: 32px; height: 32px; }
+
+    .footer-logo span {
+      font-family: var(--serif-h);
+      font-size: .8rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: #555;
+    }
+
+    footer p {
+      font-family: var(--serif-h);
+      font-size: .78rem;
+      letter-spacing: .05em;
+      text-align: right;
+      line-height: 1.7;
+    }
+
+    footer a { color: var(--red); text-decoration: none; }
+
+    /* ── RESPONSIVE ────────────────────────────── */
+    @media (max-width: 768px) {
+      .cover { padding: 2.5rem 2rem; }
+      nav { padding: .9rem 1.5rem; }
+      nav ul { display: none; }
+      .page { padding: 0 1.5rem; }
+      section { padding: 4rem 0; }
+      footer { flex-direction: column; gap: 1.5rem; padding: 2.5rem 1.5rem; }
+      footer p { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ COVER ═══════════════════════════════════════════════════════════ -->
+<div class="cover">
+  <div class="cover-logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66.56 66.55">
+      <path fill="#FF474D" d="M66.56,33.28c0,18.38-14.9,33.28-33.28,33.28S0,51.66,0,33.28,14.9,0,33.28,0s33.28,14.9,33.28,33.28"/>
+      <path fill="#fff" d="M18.19,46.95v4.08c1.38.6,2.88,1,4.42,1.18-2.4-.91-3.69-3.4-4.42-5.26"/>
+      <path fill="#fff" d="M27.95,40.78s0,0,0,0c-.52-.12-1.17-.27-1.85-.42-.76-.17-1.56-.34-2.23-.5-1.66-.4-3.57-1.19-3.57-3.79,0-1.78.8-3.05,1.92-3.78-2.28.86-3.8,2.75-3.8,5.05s1.32,4.24,3.45,4.96c1.06.35,2.47.7,4.2,1.04,2.22.44,3.55,1.9,3.55,3.89,0,2.46-.96,4.16-2.71,4.91,3.98-.74,5.47-3.43,5.47-5.97s-1.82-4.78-4.42-5.39"/>
+      <path fill="#fff" d="M30.96,36.62l-.37-3.81c-1.05-.4-2.32-.79-3.98-.95,2.01.7,3.25,2.52,4.35,4.76"/>
+      <path fill="#fff" d="M48.8,48.41v3.99l5.5-1.64c-.83-.34-2.08-.87-2.49-1.11-.13-.08-.21-.21-.21-.36v-28.05l-5.95,1.65,2.79,1.06c.17.06.27.22.27.4,0,4.02.03,6.65.09,7.84,0,.14-.05.27-.16.35-.11.08-.25.11-.39.07-1.7-.53-3.28-.76-4.81-.72,1.88.18,4.05,1.9,5.27,4.21.03.06.05.13.05.2v10.45l.04,1.67Z"/>
+      <path fill="#fff" d="M40.99,52.38c1.72,0,3.13-.38,4.34-1.19-.55.21-1.14.33-1.75.33-2.28,0-4.19-1.06-5.53-3.05-1.18-1.76-1.83-4.15-1.83-6.73,0-3.96,1.37-8.51,5.07-9.61-4.94.99-8.31,4.97-8.31,10.18,0,6.92,4.15,10.07,8.01,10.07"/>
+      <path fill="#fff" d="M58.25,44.6s-.38-.29-1.01-.29c-.81,0-1.29.37-1.56.79-.23.36-.27.7-.27.91,0,.98.65,1.69,1.84,1.69.62,0,.98-.29.99-.29.03,0,.12.14.2.24h.07l.02-1.16h-.08c-.12.53-.51,1.1-1.19,1.1-.77,0-1.19-.72-1.19-1.56s.38-1.62,1.19-1.62c.46,0,.79.28,1,.61.07.12.15.33.2.49h.08v-1.14h-.07c-.07.09-.19.22-.22.22"/>
+      <path fill="#fff" d="M57.14,48.58c-1.42,0-2.55-1.14-2.55-2.55s1.13-2.55,2.55-2.55,2.54,1.14,2.54,2.55-1.13,2.55-2.54,2.55M57.14,43.26c-1.53,0-2.77,1.24-2.77,2.77s1.24,2.77,2.77,2.77,2.76-1.24,2.76-2.77-1.24-2.77-2.76-2.77"/>
+    </svg>
+    <span class="cover-logo-name">Segmant Design</span>
+  </div>
+
+  <div class="cover-body">
+    <p class="cover-label">Website Audit &amp; Proposal &mdash; June 2026</p>
+    <h1>A review of<br><em>Childhood Matters</em><br>childhoodmatters.co.uk</h1>
+    <p class="cover-sub">Prepared exclusively for Sandra Tibbles and the team at Childhood Matters Consulting Ltd. This document reviews the current website, identifies issues affecting legal compliance, visibility, and performance, and sets out a clear plan for improvement.</p>
+  </div>
+
+  <div class="cover-footer">
+    <span>Prepared by <strong>Segmant Design</strong> &mdash; segmantdesign@gmail.com</span>
+    <span>Confidential &mdash; June 2026</span>
+  </div>
+</div>
+
+<!-- ═══ NAV ══════════════════════════════════════════════════════════════ -->
+<nav>
+  <div class="nav-brand">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66.56 66.55">
+      <path fill="#FF474D" d="M66.56,33.28c0,18.38-14.9,33.28-33.28,33.28S0,51.66,0,33.28,14.9,0,33.28,0s33.28,14.9,33.28,33.28"/>
+      <path fill="#fff" d="M18.19,46.95v4.08c1.38.6,2.88,1,4.42,1.18-2.4-.91-3.69-3.4-4.42-5.26"/>
+      <path fill="#fff" d="M27.95,40.78c-.52-.12-1.17-.27-1.85-.42-.76-.17-1.56-.34-2.23-.5-1.66-.4-3.57-1.19-3.57-3.79,0-1.78.8-3.05,1.92-3.78-2.28.86-3.8,2.75-3.8,5.05s1.32,4.24,3.45,4.96c1.06.35,2.47.7,4.2,1.04,2.22.44,3.55,1.9,3.55,3.89,0,2.46-.96,4.16-2.71,4.91,3.98-.74,5.47-3.43,5.47-5.97s-1.82-4.78-4.42-5.39"/>
+      <path fill="#fff" d="M48.8,48.41v3.99l5.5-1.64c-.83-.34-2.08-.87-2.49-1.11-.13-.08-.21-.21-.21-.36v-28.05l-5.95,1.65,2.79,1.06c.17.06.27.22.27.4,0,4.02.03,6.65.09,7.84,0,.14-.05.27-.16.35-.11.08-.25.11-.39.07-1.7-.53-3.28-.76-4.81-.72,1.88.18,4.05,1.9,5.27,4.21.03.06.05.13.05.2v10.45l.04,1.67Z"/>
+      <path fill="#fff" d="M40.99,52.38c1.72,0,3.13-.38,4.34-1.19-.55.21-1.14.33-1.75.33-2.28,0-4.19-1.06-5.53-3.05-1.18-1.76-1.83-4.15-1.83-6.73,0-3.96,1.37-8.51,5.07-9.61-4.94.99-8.31,4.97-8.31,10.18,0,6.92,4.15,10.07,8.01,10.07"/>
+    </svg>
+    <span>Segmant Design</span>
+  </div>
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#legal">Legal</a></li>
+    <li><a href="#analytics">Analytics</a></li>
+    <li><a href="#seo">SEO</a></li>
+    <li><a href="#content">Content</a></li>
+    <li><a href="#ux">Experience</a></li>
+    <li><a href="#plan">Action Plan</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ MAIN ══════════════════════════════════════════════════════════════ -->
+<main class="page">
+
+  <!-- ── OVERVIEW ─────────────────────────────── -->
+  <section id="overview">
+    <p class="section-label">Introduction</p>
+    <h2 class="section-title">A strong foundation,<br>with urgent gaps to address</h2>
+    <p class="section-intro">Childhood Matters has a professional, well-structured website that clearly communicates the breadth of your consultancy services. The platform and hosting are well-chosen. However, this review has identified several issues — some of which carry legal risk — that need to be resolved before the site can be considered fit for purpose as a business development tool.</p>
+
+    <div class="summary-grid">
+      <div class="summary-card">
+        <p class="summary-card-label">Platform</p>
+        <p class="summary-card-value">WordPress + Elementor</p>
+      </div>
+      <div class="summary-card">
+        <p class="summary-card-label">Hosting</p>
+        <p class="summary-card-value">Cloudways (Google Cloud)</p>
+      </div>
+      <div class="summary-card">
+        <p class="summary-card-label">Total Pages</p>
+        <p class="summary-card-value">24 pages</p>
+      </div>
+      <div class="summary-card">
+        <p class="summary-card-label">Blog Posts</p>
+        <p class="summary-card-value red">0 — None published</p>
+      </div>
+      <div class="summary-card">
+        <p class="summary-card-label">Cookie Consent</p>
+        <p class="summary-card-value red">Missing — Non-compliant</p>
+      </div>
+      <div class="summary-card">
+        <p class="summary-card-label">Google Analytics</p>
+        <p class="summary-card-value red">Installed but not connected</p>
+      </div>
+      <div class="summary-card">
+        <p class="summary-card-label">Privacy Policy</p>
+        <p class="summary-card-value red">Not published</p>
+      </div>
+      <div class="summary-card">
+        <p class="summary-card-label">Testimonials</p>
+        <p class="summary-card-value amber">4 — anonymous, limited</p>
+      </div>
+    </div>
+
+    <div class="screenshot-wrap">
+      <div class="screenshot-bar">
+        <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+        <div class="url-bar">https://childhoodmatters.co.uk</div>
+      </div>
+      <img src="images/cm-home.png" alt="Childhood Matters homepage">
+      <div class="screenshot-caption"><strong>Homepage — June 2026.</strong> The site presents well visually, but notice the complete absence of a cookie consent banner. Any visitor arriving on this page has cookies set without their knowledge or consent — a breach of UK law.</div>
+    </div>
+  </section>
+
+  <!-- ── LEGAL ─────────────────────────────────── -->
+  <section id="legal">
+    <p class="section-label">Section 1 — Legal Compliance</p>
+    <h2 class="section-title">Three legal requirements<br>are currently unmet</h2>
+    <p class="section-intro">This is the most urgent part of this report. The issues below are not optional improvements — they are requirements under UK law that expose the business to regulatory risk until they are resolved.</p>
+
+    <!-- Cookie -->
+    <div class="issue">
+      <div class="issue-header">
+        <span class="issue-badge badge-critical">Critical</span>
+        <h3 class="issue-title">No cookie consent banner — breach of UK GDPR and PECR</h3>
+      </div>
+
+      <p>When a visitor arrives on childhoodmatters.co.uk, they receive no notice about cookies, no opportunity to accept or decline tracking, and no record of their preference is kept. This is a direct breach of two pieces of UK legislation:</p>
+
+      <p><strong>UK GDPR</strong> requires that visitors are informed about data collection and that a lawful basis exists before any personal data is processed. <strong>PECR</strong> (Privacy and Electronic Communications Regulations) goes further — it requires explicit, informed opt-in consent before any non-essential cookies are placed on a visitor's device.</p>
+
+      <p>The UK's data regulator, the ICO, actively investigates cookie consent failures and has the power to issue fines. This is not a grey area and must be the first thing addressed.</p>
+
+      <div class="screenshot-wrap">
+        <div class="screenshot-bar">
+          <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+          <div class="url-bar">https://childhoodmatters.co.uk</div>
+        </div>
+        <img src="images/cm-home.png" alt="Homepage with no cookie banner">
+        <div class="screenshot-caption"><strong>No cookie banner is present.</strong> The page loads in full with no consent notice, no opt-in, and no opt-out. A compliant site would display a consent layer before any tracking activates.</div>
+      </div>
+
+      <p>The website currently has the MonsterInsights analytics plugin installed (to connect to Google Analytics), as well as WP Statistics for local visitor tracking. Both can set cookies. The following comment is visible in the site's HTML source code — confirming the analytics setup is incomplete and unprotected:</p>
+
+      <div class="source-quote">
+        <span class="comment">&lt;!-- This site uses the Google Analytics by MonsterInsights plugin v10.2.2 --&gt;</span><br>
+        <span class="comment">&lt;!-- Note: MonsterInsights is not currently configured on this site. --&gt;</span><br>
+        <span class="comment">&lt;!-- The site owner needs to authenticate with Google Analytics --&gt;</span><br>
+        <span class="comment">&lt;!-- in the MonsterInsights settings panel. --&gt;</span><br>
+        <span class="comment">&lt;!-- No tracking code set --&gt;</span>
+      </div>
+
+      <div class="annotation">
+        <strong>What this means</strong>
+        The plugin is live, visible to any visitor who views source, and advertising to the world that Google Analytics is not configured. When GA is eventually connected, it will immediately begin tracking visitors without consent unless a cookie consent plugin is in place first.
+      </div>
+
+      <div class="rec-box">
+        <h4>Recommendation</h4>
+        <ul>
+          <li>Install CookieYes or Complianz (both have free tiers designed for UK compliance)</li>
+          <li>Configure the banner to block all non-essential scripts until consent is given</li>
+          <li>Set WP Statistics to anonymise IPs and disable its own cookie in plugin settings</li>
+          <li>Only connect Google Analytics after the consent banner is in place and tested</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Privacy Policy -->
+    <div class="issue">
+      <div class="issue-header">
+        <span class="issue-badge badge-critical">Critical</span>
+        <h3 class="issue-title">No Privacy Policy published</h3>
+      </div>
+
+      <p>Under UK GDPR, any organisation that collects personal data must publish a Privacy Policy that clearly explains what data is collected, why, for how long, who it is shared with, and how individuals can exercise their rights.</p>
+
+      <p>The contact form on childhoodmatters.co.uk collects names, email addresses, phone numbers, and organisation details. This alone makes a Privacy Policy mandatory. There is no such page on the site.</p>
+
+      <div class="screenshot-wrap">
+        <div class="screenshot-bar">
+          <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+          <div class="url-bar">https://childhoodmatters.co.uk/contact/</div>
+        </div>
+        <img src="images/cm-contact.png" alt="Contact page with no privacy policy link">
+        <div class="screenshot-caption"><strong>Contact page — personal data is collected here with no reference to a Privacy Policy.</strong> A name, telephone number, organisation, and email address are requested with no explanation of how this data is handled.</div>
+      </div>
+
+      <div class="rec-box">
+        <h4>Recommendation</h4>
+        <ul>
+          <li>Write and publish a Privacy Policy at /privacy-policy/</li>
+          <li>Include a link to it on the contact form ("By submitting this form, you agree to our Privacy Policy")</li>
+          <li>Add a link to the footer so it is accessible from every page</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Cookie Policy -->
+    <div class="issue">
+      <div class="issue-header">
+        <span class="issue-badge badge-critical">Critical</span>
+        <h3 class="issue-title">No Cookie Policy published</h3>
+      </div>
+
+      <p>PECR requires a Cookie Policy (or a dedicated section within the Privacy Policy) that lists every cookie the site sets, explains its purpose, states its lifespan, and confirms whether it is essential or non-essential. This does not exist on the site.</p>
+
+      <p>Once a cookie consent plugin is installed, it will automatically generate and maintain this list — so this item is largely resolved as a by-product of fixing the consent banner.</p>
+
+      <div class="rec-box">
+        <h4>Recommendation</h4>
+        <ul>
+          <li>Allow the cookie consent plugin (CookieYes or Complianz) to auto-generate a cookie policy page</li>
+          <li>Review and customise the generated content to ensure accuracy</li>
+          <li>Link the cookie policy from the footer and from within the consent banner</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ANALYTICS ──────────────────────────────── -->
+  <section id="analytics">
+    <p class="section-label">Section 2 — Analytics</p>
+    <h2 class="section-title">The business is flying blind<br>— no visitor data is being captured</h2>
+    <p class="section-intro">Without analytics, there is no way to know how many people visit the site, where they come from, what content they engage with, or whether visitors become enquiries. This needs to be resolved as a priority, but only after the cookie consent banner is in place.</p>
+
+    <div class="issue">
+      <div class="issue-header">
+        <span class="issue-badge badge-important">Important</span>
+        <h3 class="issue-title">Google Analytics is installed but not connected</h3>
+      </div>
+
+      <p>The MonsterInsights plugin — which connects WordPress to Google Analytics — is installed on the site but has never been authenticated. As a result, no visitor data has ever been collected through GA. The plugin's own code comments this fact openly in the page source (see Section 1).</p>
+
+      <p>WP Statistics is running and collecting basic local visitor counts, but this tool provides a fraction of the insight that Google Analytics 4 offers: no traffic source breakdown, no user behaviour flows, no conversion tracking, no demographic data, and no integration with Google Search Console to show which search terms bring visitors to the site.</p>
+
+      <div class="rec-box">
+        <h4>Recommendation</h4>
+        <ul>
+          <li>Create or connect a Google Analytics 4 (GA4) property at analytics.google.com</li>
+          <li>Authenticate MonsterInsights with the GA4 account via the plugin settings panel</li>
+          <li>Ensure the cookie consent plugin gates GA — it must only fire for visitors who have given consent</li>
+          <li>Connect Google Search Console and link it to the GA4 property for keyword-level data</li>
+          <li>Set up a monthly review of GA4 data to inform content and marketing decisions</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SEO ────────────────────────────────────── -->
+  <section id="seo">
+    <p class="section-label">Section 3 — Search Engine Optimisation</p>
+    <h2 class="section-title">Straightforward fixes that will<br>improve Google visibility</h2>
+    <p class="section-intro">The Yoast SEO plugin is installed and the sitemap is correctly configured. However, several important on-page SEO elements have not been set up, and there is a significant structural opportunity being missed.</p>
+
+    <div class="issue">
+      <div class="issue-header">
+        <span class="issue-badge badge-important">Important</span>
+        <h3 class="issue-title">Homepage title is not optimised</h3>
+      </div>
+
+      <p>The homepage title — the most important on-page SEO signal — currently reads: <strong>"Home - Childhood Matters"</strong>. This provides no information to Google about what the business does or who it serves, and it will not rank for any relevant search terms.</p>
+
+      <p>A well-optimised title for this page might read: <em>Educational Consultancy &amp; SEND Support | Childhood Matters</em> — immediately communicating the service and audience to both Google and potential visitors scanning search results.</p>
+
+      <div class="rec-box">
+        <h4>Recommendation</h4>
+        <ul>
+          <li>Update the homepage title in Yoast SEO to include primary keywords</li>
+          <li>Write unique, keyword-informed titles for all 24 pages — none should read "Page Name - Site Name" without context</li>
+          <li>Titles should be 50–60 characters and lead with the most important keyword</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="issue">
+      <div class="issue-header">
+        <span class="issue-badge badge-important">Important</span>
+        <h3 class="issue-title">Meta descriptions not set on any pages</h3>
+      </div>
+
+      <p>Meta descriptions are the short paragraphs that appear beneath each result in a Google search. They do not directly affect ranking, but they significantly influence click-through rates — how many people actually click your result over a competitor's.</p>
+
+      <p>None of the 24 pages have a meta description set in Yoast SEO. Google is falling back to pulling the first line of page content, which rarely reads well in a search context and represents a lost opportunity to make a strong first impression.</p>
+
+      <div class="rec-box">
+        <h4>Recommendation</h4>
+        <ul>
+          <li>Write a unique meta description for each of the 24 pages</li>
+          <li>Keep them to 150–160 characters</li>
+          <li>Include a clear value proposition and a soft call to action where appropriate</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="issue">
+      <div class="issue-header">
+        <span class="issue-badge badge-important">Important</span>
+        <h3 class="issue-title">Five consultant pages have non-descriptive URLs</h3>
+      </div>
+
+      <p>Several associate consultant profile pages were created by duplicating a template without updating the URL. The result is a set of pages with addresses like:</p>
+
+      <div class="source-quote">
+        childhoodmatters.co.uk<span class="key">/associate-consultant-2/</span><br>
+        childhoodmatters.co.uk<span class="key">/associate-consultant-3/</span><br>
+        childhoodmatters.co.uk<span class="key">/associate-consultant-4/</span><br>
+        childhoodmatters.co.uk<span class="key">/associate-consultant-5/</span><br>
+        childhoodmatters.co.uk<span class="key">/associate-consultant-6/</span>
+      </div>
+
+      <p>Two pages are correctly named — <code>/associate-consultant-danielle-ford/</code> and <code>/associate-consultant-victoria-white/</code>. All pages should follow this pattern. Generic numeric URLs provide no SEO value, cannot rank for any search term, and look unprofessional if ever shared directly.</p>
+
+      <div class="rec-box">
+        <h4>Recommendation</h4>
+        <ul>
+          <li>Update each URL slug to use the consultant's name (e.g. /associate-consultant-dr-martin-bloomfield/)</li>
+          <li>Set up automatic 301 redirects from the old numeric URLs to avoid broken links</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="issue">
+      <div class="issue-header">
+        <span class="issue-badge badge-opportunity">Opportunity</span>
+        <h3 class="issue-title">No blog — a major missed opportunity for organic traffic</h3>
+      </div>
+
+      <p>The site has 24 pages and zero blog posts. For a specialist consultancy in education, SEND, safeguarding, and parenting, this is a significant untapped opportunity. The Childhood Matters team has expertise that directly answers the questions being searched for by headteachers, SENCOs, trust leaders, and parents every day.</p>
+
+      <p>Articles on topics such as how to improve school attendance, what to expect from a safeguarding audit, how to support neurodivergent pupils in a mainstream setting, or what alternative provision actually involves would attract exactly the right audience — organically, at no ongoing cost.</p>
+
+      <p>A consistently updated blog builds domain authority over time, meaning the whole site ranks better for competitive terms. It also provides content to share on LinkedIn and in email communications, demonstrating expertise rather than just claiming it.</p>
+
+      <div class="rec-box">
+        <h4>Recommendation</h4>
+        <ul>
+          <li>Create a Blog / Insights section on the site</li>
+          <li>Start with four to six articles targeting specific questions your audience searches for</li>
+          <li>Aim for a minimum of one to two posts per month going forward</li>
+          <li>Connect Google Search Console to identify which terms are already bringing visitors, and create content around them</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="issue">
+      <div class="issue-header">
+        <span class="issue-badge badge-improve">Improve</span>
+        <h3 class="issue-title">No Google Business Profile or local SEO signals</h3>
+      </div>
+
+      <p>There is no physical or registered address listed on the contact page, in the footer, or anywhere else on the site. A Google Business Profile does not appear to be set up. These are important for trust and for appearing in local/regional searches — even for a national consultancy, having a verifiable business presence matters.</p>
+
+      <div class="rec-box">
+        <h4>Recommendation</h4>
+        <ul>
+          <li>Add a registered business address to the footer and contact page</li>
+          <li>Create and verify a Google Business Profile at business.google.com</li>
+          <li>Enable Google Reviews via the Business Profile — these appear directly in search results</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTENT ────────────────────────────────── -->
+  <section id="content">
+    <p class="section-label">Section 4 — Content &amp; Conversion</p>
+    <h2 class="section-title">The site informs,<br>but doesn't yet convert</h2>
+    <p class="section-intro">A website for a consultancy business should not only describe your services — it should actively build trust, handle objections, and move interested visitors towards making an enquiry. Several content gaps are currently reducing the site's effectiveness as a business development tool.</p>
+
+    <div class="issue">
+      <div class="issue-header">
+        <span class="issue-badge badge-important">Important</span>
+        <h3 class="issue-title">Testimonials are thin and anonymous</h3>
+      </div>
+
+      <p>The testimonials page contains four quotes. None include the reviewer's name, their school or organisation, or a verifiable source. They are attributed only to generic descriptors such as "Head of Secondary, Community Special School."</p>
+
+      <p>For a consultancy working with schools, trusts, and local authorities, unverifiable anonymous quotes carry very little weight with the decision-makers your business needs to convince. A headteacher or trust CEO commissioning consultancy services at this level will want to know who has worked with you before, and may want the option to speak to them.</p>
+
+      <div class="screenshot-wrap">
+        <div class="screenshot-bar">
+          <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+          <div class="url-bar">https://childhoodmatters.co.uk/testimonials/</div>
+        </div>
+        <img src="images/cm-testimonials.png" alt="Testimonials page">
+        <div class="screenshot-caption"><strong>Testimonials page — four anonymous quotes with no names, organisations, or dates.</strong> Decision-makers at headteacher and trust level expect verifiable references, not unattributed quotes.</div>
+      </div>
+
+      <div class="rec-box">
+        <h4>Recommendation</h4>
+        <ul>
+          <li>Seek permission from satisfied clients to use their name and organisation name</li>
+          <li>Build towards a minimum of 10–15 testimonials</li>
+          <li>Set up Google Reviews for third-party verified social proof that appears in search results</li>
+          <li>Distribute testimonials across relevant service pages, not just on a single standalone page</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="issue">
+      <div class="issue-header">
+        <span class="issue-badge badge-opportunity">Opportunity</span>
+        <h3 class="issue-title">No case studies — the most persuasive content type is missing</h3>
+      </div>
+
+      <p>There are no case studies anywhere on the site. For a consultancy, case studies are consistently the highest-converting content type. A brief account of a challenge a school or family faced, the approach Childhood Matters took, and the outcome achieved — improved attendance, a successful Ofsted outcome, a child reintegrating into education, a family better equipped to advocate — demonstrates real impact in a way that generic service descriptions cannot.</p>
+
+      <div class="rec-box">
+        <h4>Recommendation</h4>
+        <ul>
+          <li>Develop two to three case studies to begin with</li>
+          <li>Schools or families who prefer anonymity can be presented without names (e.g. "A primary school in the East Midlands")</li>
+          <li>Publish case studies as standalone pages and link them from the relevant service sections</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="issue">
+      <div class="issue-header">
+        <span class="issue-badge badge-improve">Improve</span>
+        <h3 class="issue-title">No pricing information on service pages</h3>
+      </div>
+
+      <p>The site describes named service packages across attendance, inclusion/SEND, and safeguarding, but none include any indication of cost. While bespoke consultancy is naturally quote-based, the complete absence of any pricing context creates friction. Some visitors will move on rather than make an enquiry simply to find out whether your services are within their budget.</p>
+
+      <div class="screenshot-wrap">
+        <div class="screenshot-bar">
+          <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+          <div class="url-bar">https://childhoodmatters.co.uk/educational-consultancy-services/</div>
+        </div>
+        <img src="images/cm-services.png" alt="Services page with no pricing">
+        <div class="screenshot-caption"><strong>Services page — packages are listed with no indication of cost.</strong> Even a starting-from price or day rate range would help visitors self-qualify and reduce the friction of making an initial enquiry.</div>
+      </div>
+
+      <div class="rec-box">
+        <h4>Recommendation</h4>
+        <ul>
+          <li>Add indicative pricing, day rate ranges, or package tier descriptions to service pages</li>
+          <li>At minimum, add a statement such as "Packages are tailored to your requirements — contact us for a no-obligation quote"</li>
+          <li>Make it easy for visitors to understand what happens after they enquire</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="issue">
+      <div class="issue-header">
+        <span class="issue-badge badge-improve">Improve</span>
+        <h3 class="issue-title">Contact page is missing key information</h3>
+      </div>
+
+      <p>The contact page provides a phone number and email address, which is positive. However, it is missing a physical or registered business address, a response time commitment, and any indication of what happens after a form is submitted. These small details reduce uncertainty and increase the likelihood that someone follows through with an enquiry.</p>
+
+      <div class="rec-box">
+        <h4>Recommendation</h4>
+        <ul>
+          <li>Add a registered business address</li>
+          <li>Add a response time commitment ("We aim to respond within one working day")</li>
+          <li>Add a brief note on next steps after the form is submitted</li>
+          <li>Add a LinkedIn link to the company page as an additional contact route</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── UX ─────────────────────────────────────── -->
+  <section id="ux">
+    <p class="section-label">Section 5 — User Experience</p>
+    <h2 class="section-title">Consistency and trust signals<br>need strengthening</h2>
+    <p class="section-intro">The overall layout and navigation of the site is clear. The areas for improvement here are about completing what has been started and ensuring every page projects the same level of professionalism.</p>
+
+    <div class="issue">
+      <div class="issue-header">
+        <span class="issue-badge badge-important">Important</span>
+        <h3 class="issue-title">No legal links in the footer</h3>
+      </div>
+      <p>The site footer contains no links to a Privacy Policy, Cookie Policy, or Terms and Conditions. Visitors expect to find legal information in the footer, and their absence — particularly for a business working with schools, families, and children — reduces confidence in the organisation's professionalism. Once the legal pages described in Section 1 are created, links must be added to the footer of every page.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="issue">
+      <div class="issue-header">
+        <span class="issue-badge badge-improve">Improve</span>
+        <h3 class="issue-title">Associate consultant profiles are inconsistent</h3>
+      </div>
+      <p>The associate consultant team is a significant selling point — eight experienced professionals covering a wide range of specialisms. However, the profile pages vary considerably in quality and completeness. Some appear to be placeholder pages that have not been fully built out. All eight profiles should receive equal treatment: a full biography, areas of specialism, relevant qualifications, a professional photograph, and a LinkedIn link.</p>
+
+      <div class="screenshot-wrap">
+        <div class="screenshot-bar">
+          <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+          <div class="url-bar">https://childhoodmatters.co.uk/about-us/</div>
+        </div>
+        <img src="images/cm-about.png" alt="About page showing team">
+        <div class="screenshot-caption"><strong>About page — the team section is a strong asset.</strong> The depth and breadth of the associate team should be showcased fully on each individual profile page, with complete biographies and credentials.</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="issue">
+      <div class="issue-header">
+        <span class="issue-badge badge-improve">Improve</span>
+        <h3 class="issue-title">No FAQ section</h3>
+      </div>
+      <p>There is no FAQ content anywhere on the site. Common questions about who your services are for, how engagements work, whether you serve individual families or only institutions, and how to get started are unanswered without contacting you directly. An FAQ section — on a dedicated page or embedded within service pages — reduces friction and handles objections proactively.</p>
+    </div>
+  </section>
+
+  <!-- ── ACTION PLAN ────────────────────────────── -->
+  <section id="plan">
+    <p class="section-label">Section 6 — Action Plan</p>
+    <h2 class="section-title">A clear path forward,<br>in order of priority</h2>
+    <p class="section-intro">The following plan organises every recommended action into four phases. We propose to work through these in sequence, beginning immediately with the legal and compliance items.</p>
+
+    <div class="action-tiers">
+      <div class="action-tier">
+        <p class="tier-label tier-now">Immediate — Legal</p>
+        <p class="tier-title">Protect the business first</p>
+        <ol>
+          <li>Install and configure a cookie consent plugin (CookieYes or Complianz)</li>
+          <li>Write and publish a Privacy Policy page</li>
+          <li>Write and publish a Cookie Policy page</li>
+          <li>Add Privacy Policy and Cookie Policy links to the site footer</li>
+          <li>Configure WP Statistics to run in GDPR-safe mode</li>
+        </ol>
+      </div>
+      <div class="action-tier">
+        <p class="tier-label tier-soon">Short-term — Within 30 Days</p>
+        <p class="tier-title">Connect the tools and fix the basics</p>
+        <ol>
+          <li>Connect Google Analytics 4 via MonsterInsights</li>
+          <li>Set Yoast meta titles for all 24 pages</li>
+          <li>Write meta descriptions for all 24 pages</li>
+          <li>Fix consultant page URLs and set up 301 redirects</li>
+          <li>Add registered business address to footer and contact page</li>
+          <li>Create and verify a Google Business Profile</li>
+        </ol>
+      </div>
+      <div class="action-tier">
+        <p class="tier-label tier-medium">Medium-term — 30 to 90 Days</p>
+        <p class="tier-title">Build trust and improve conversion</p>
+        <ol>
+          <li>Collect named testimonials and expand to 10–15 entries</li>
+          <li>Set up Google Reviews via Business Profile</li>
+          <li>Develop two to three case studies</li>
+          <li>Launch Blog / Insights section with initial articles</li>
+          <li>Add pricing context to service pages</li>
+          <li>Complete all eight associate consultant profiles consistently</li>
+          <li>Add an FAQ section</li>
+        </ol>
+      </div>
+      <div class="action-tier">
+        <p class="tier-label tier-ongoing">Ongoing</p>
+        <p class="tier-title">Grow visibility over time</p>
+        <ol>
+          <li>Publish 1–2 blog articles per month</li>
+          <li>Review GA4 data monthly to inform content and marketing</li>
+          <li>Continue building Google Reviews</li>
+          <li>Monitor Search Console for ranking improvements</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══ FOOTER ════════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66.56 66.55">
+      <path fill="#FF474D" d="M66.56,33.28c0,18.38-14.9,33.28-33.28,33.28S0,51.66,0,33.28,14.9,0,33.28,0s33.28,14.9,33.28,33.28"/>
+      <path fill="#fff" d="M18.19,46.95v4.08c1.38.6,2.88,1,4.42,1.18-2.4-.91-3.69-3.4-4.42-5.26"/>
+      <path fill="#fff" d="M27.95,40.78c-.52-.12-1.17-.27-1.85-.42-.76-.17-1.56-.34-2.23-.5-1.66-.4-3.57-1.19-3.57-3.79,0-1.78.8-3.05,1.92-3.78-2.28.86-3.8,2.75-3.8,5.05s1.32,4.24,3.45,4.96c1.06.35,2.47.7,4.2,1.04,2.22.44,3.55,1.9,3.55,3.89,0,2.46-.96,4.16-2.71,4.91,3.98-.74,5.47-3.43,5.47-5.97s-1.82-4.78-4.42-5.39"/>
+      <path fill="#fff" d="M48.8,48.41v3.99l5.5-1.64c-.83-.34-2.08-.87-2.49-1.11-.13-.08-.21-.21-.21-.36v-28.05l-5.95,1.65,2.79,1.06c.17.06.27.22.27.4,0,4.02.03,6.65.09,7.84,0,.14-.05.27-.16.35-.11.08-.25.11-.39.07-1.7-.53-3.28-.76-4.81-.72,1.88.18,4.05,1.9,5.27,4.21.03.06.05.13.05.2v10.45l.04,1.67Z"/>
+      <path fill="#fff" d="M40.99,52.38c1.72,0,3.13-.38,4.34-1.19-.55.21-1.14.33-1.75.33-2.28,0-4.19-1.06-5.53-3.05-1.18-1.76-1.83-4.15-1.83-6.73,0-3.96,1.37-8.51,5.07-9.61-4.94.99-8.31,4.97-8.31,10.18,0,6.92,4.15,10.07,8.01,10.07"/>
+    </svg>
+    <span>Segmant Design</span>
+  </div>
+  <p>
+    Prepared for Childhood Matters Consulting Ltd<br>
+    <a href="mailto:segmantdesign@gmail.com">segmantdesign@gmail.com</a> &mdash; <a href="https://inex.segmant.co.uk">inex.segmant.co.uk</a><br>
+    Confidential &mdash; June 2026
+  </p>
+</footer>
+
+</body>
+</html>
