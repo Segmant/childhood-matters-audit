@@ -253,6 +253,16 @@
     .badge-opportunity { background: var(--dark); color: var(--white); }
     .badge-practice { background: var(--red); color: var(--white); font-size: .85rem; font-weight: 700; min-width: 2rem; }
 
+    /* ── LAYMAN'S TERMS ────────────────────────── */
+    .layman {
+      display: block;
+      font-size: .8rem;
+      color: var(--muted);
+      font-style: italic;
+      margin-top: .25rem;
+      padding-left: .1rem;
+    }
+
     .issue-title {
       font-family: var(--serif-h);
       font-size: 1.4rem;
@@ -1182,14 +1192,30 @@
         <h3 class="issue-title">Your site added to my Cloudflare account for speed and security</h3>
       </div>
       <ul class="issue-list">
-        <li><strong>Global CDN (Content Delivery Network)</strong> — your site's assets are served from data centres worldwide, meaning visitors load the site from a location physically close to them rather than from a single server. Pages load significantly faster for users anywhere in the UK and beyond</li>
-        <li><strong>DDoS protection</strong> — Cloudflare sits in front of your server and absorbs malicious traffic at scale, protecting the site from distributed attacks that could otherwise take it offline entirely</li>
-        <li><strong>Web Application Firewall (WAF)</strong> — intelligent rules that block malicious bots, scrapers, and known attack patterns before they ever reach your site or server</li>
-        <li><strong>Free SSL/TLS certificate</strong> — end-to-end encryption between visitor and server, automatically renewed, with HTTP automatically upgraded to HTTPS</li>
-        <li><strong>Caching at the edge</strong> — static assets and pages are cached at Cloudflare's network level, dramatically reducing server load and improving response times even during traffic spikes</li>
-        <li><strong>Bot management</strong> — automated filtering of bad bots that inflate analytics figures, scrape content, or probe for vulnerabilities</li>
-        <li><strong>Always-on protection</strong> — even if the origin server has a brief issue, Cloudflare can serve a cached version of the site to visitors so it remains accessible</li>
-        <li><strong>Real-time analytics</strong> — Cloudflare provides an additional layer of traffic analytics, including blocked threats and bandwidth saved, at no cost</li>
+        <li><strong>Global CDN (Content Delivery Network)</strong> — your site's assets are served from data centres worldwide, meaning visitors load the site from a location physically close to them rather than from a single server
+          <span class="layman">In plain English: your website loads quickly for everyone, wherever they are — not just people near the server</span>
+        </li>
+        <li><strong>DDoS protection</strong> — Cloudflare sits in front of your server and absorbs malicious traffic at scale, protecting the site from distributed attacks that could otherwise take it offline entirely
+          <span class="layman">In plain English: if someone tries to flood your website with fake traffic to knock it offline, Cloudflare stops it before it ever reaches you</span>
+        </li>
+        <li><strong>Web Application Firewall (WAF)</strong> — intelligent rules that block malicious bots, scrapers, and known attack patterns before they ever reach your site or server
+          <span class="layman">In plain English: a security filter that blocks hackers and automated attacks the moment they appear — before they can do any damage</span>
+        </li>
+        <li><strong>Free SSL/TLS certificate</strong> — end-to-end encryption between visitor and server, automatically renewed, with HTTP automatically upgraded to HTTPS
+          <span class="layman">In plain English: this is the padlock you see in the browser address bar — it means every visitor's connection to your site is private and secure</span>
+        </li>
+        <li><strong>Caching at the edge</strong> — static assets and pages are cached at Cloudflare's network level, dramatically reducing server load and improving response times even during traffic spikes
+          <span class="layman">In plain English: your most visited pages are stored and ready to go, so they load almost instantly instead of being built fresh every time someone visits</span>
+        </li>
+        <li><strong>Bot management</strong> — automated filtering of bad bots that inflate analytics figures, scrape content, or probe for vulnerabilities
+          <span class="layman">In plain English: filters out fake automated visitors so your analytics only show real people, and stops programs scanning the site for weaknesses</span>
+        </li>
+        <li><strong>Always-on protection</strong> — even if the origin server has a brief issue, Cloudflare can serve a cached version of the site to visitors so it remains accessible
+          <span class="layman">In plain English: if there's ever a brief problem with the server, your website stays online for visitors — they won't see an error page</span>
+        </li>
+        <li><strong>Real-time analytics</strong> — Cloudflare provides an additional layer of traffic analytics, including blocked threats and bandwidth saved, at no cost
+          <span class="layman">In plain English: a live dashboard showing how much traffic your site receives, how many threats were blocked, and how fast it's performing — all included for free</span>
+        </li>
       </ul>
     </div>
 
@@ -1201,14 +1227,30 @@
         <h3 class="issue-title">Built on Oxygen Builder with WordPress — not Elementor</h3>
       </div>
       <ul class="issue-list">
-        <li><strong>Significantly faster load times</strong> — Elementor loads a substantial amount of its own CSS and JavaScript on every page regardless of what is actually used. Oxygen generates only the code the page needs, resulting in leaner, faster pages that score better on Google PageSpeed and Core Web Vitals</li>
-        <li><strong>Cleaner HTML output</strong> — Elementor wraps every element in multiple layers of divs with inline styles. Oxygen produces clean, minimal markup that is easier for Google to parse and index, and easier for a developer to maintain</li>
-        <li><strong>Better SEO by default</strong> — Google uses page speed and Core Web Vitals as ranking signals. A site built in Oxygen consistently outperforms the same design built in Elementor on these metrics, which translates directly into better search visibility</li>
-        <li><strong>No reliance on a third-party plugin for layout</strong> — Elementor is a plugin dependency. If it is abandoned, breaks, or conflicts with a WordPress update, every page on the site can be affected. Oxygen compiles its designs into the theme directly, making it far more robust</li>
-        <li><strong>Full design control</strong> — Oxygen gives complete pixel-level control over every element with no pre-built widget constraints. The design is built to specification, not fitted around a drag-and-drop template</li>
-        <li><strong>No shortcode lock-in</strong> — Elementor embeds shortcodes throughout page content. If the plugin is ever deactivated, those shortcodes appear as raw text and pages break. Oxygen does not do this</li>
-        <li><strong>Reduced plugin overhead</strong> — many things Elementor requires additional plugins for (custom CSS, dynamic data, conditionals) are built natively into Oxygen, resulting in fewer active plugins and a more stable WordPress installation</li>
-        <li><strong>Built for developers, not just designers</strong> — Oxygen supports custom PHP, custom classes, and direct CSS/JS injection at a component level, making it far more powerful for building bespoke, functional sites</li>
+        <li><strong>Significantly faster load times</strong> — Elementor loads a large amount of its own code on every page regardless of what is actually used. Oxygen generates only the code each page needs, resulting in leaner, faster pages that score better on Google PageSpeed and Core Web Vitals
+          <span class="layman">In plain English: pages built in Oxygen load noticeably faster than the same pages built in Elementor — because there's no unnecessary code running in the background</span>
+        </li>
+        <li><strong>Cleaner HTML output</strong> — Elementor wraps every element in multiple layers of unnecessary code with inline styles. Oxygen produces clean, minimal markup that is easier for Google to read and index
+          <span class="layman">In plain English: the underlying code is neat and tidy — Google finds it easier to understand what your page is about, which helps your rankings</span>
+        </li>
+        <li><strong>Better SEO by default</strong> — Google uses page speed and Core Web Vitals as ranking signals. A site built in Oxygen consistently outperforms the same design built in Elementor on these tests, which translates directly into better search visibility
+          <span class="layman">In plain English: Google rewards fast, well-coded websites with better rankings — Oxygen gives your site a head start over competitors still using Elementor</span>
+        </li>
+        <li><strong>No reliance on a third-party plugin for layout</strong> — Elementor is a plugin that must be kept active at all times. If it breaks or conflicts with a WordPress update, every page on the site is affected. Oxygen compiles its output directly into the site, making it far more robust
+          <span class="layman">In plain English: your site's layout doesn't depend on a third-party company's software staying active and up to date — it's built into the site itself</span>
+        </li>
+        <li><strong>Full design control</strong> — Oxygen gives complete pixel-level control over every element with no pre-built widget constraints. The design is built to your exact specification, not fitted around a template
+          <span class="layman">In plain English: everything looks exactly as designed — not "close enough" because a drag-and-drop widget wouldn't quite do what was needed</span>
+        </li>
+        <li><strong>No shortcode lock-in</strong> — Elementor embeds shortcodes throughout page content. If the plugin is ever removed or deactivated, those shortcodes appear as broken text and pages fall apart. Oxygen does not do this
+          <span class="layman">In plain English: your content is never held hostage by the page builder — if anything ever changes, your text and content remain completely intact</span>
+        </li>
+        <li><strong>Reduced plugin overhead</strong> — many things Elementor requires additional plugins to achieve are built natively into Oxygen, resulting in fewer active plugins and a more stable, faster WordPress installation
+          <span class="layman">In plain English: fewer plugins running means fewer things that can go wrong, break after an update, or slow the site down</span>
+        </li>
+        <li><strong>Built for developers, not just designers</strong> — Oxygen supports custom code at a component level, making it far more powerful for building bespoke, functional sites without workarounds
+          <span class="layman">In plain English: if you ever need something bespoke — a custom form, a special layout, a unique feature — it can be built properly rather than patched together</span>
+        </li>
       </ul>
     </div>
 
@@ -1220,15 +1262,33 @@
         <h3 class="issue-title">Hosted on my own managed VPS server</h3>
       </div>
       <ul class="issue-list">
-        <li><strong>Dedicated resources</strong> — on shared hosting (common with many generic providers), your site shares a server with hundreds of others. A spike in traffic on a neighbouring site can slow yours down. On a VPS, your site has its own allocated CPU and RAM that no one else can consume</li>
-        <li><strong>Full server control</strong> — I configure the server specifically for WordPress performance: PHP version, memory limits, caching layers, database optimisation, and server-level redirects are all set to best-practice standards rather than generic defaults</li>
-        <li><strong>Optimised server stack</strong> — the server runs nginx (faster than Apache for WordPress), PHP 8.x, and Redis object caching — a combination that delivers significantly better performance than standard managed WordPress hosting</li>
-        <li><strong>Enhanced security posture</strong> — I harden the server at the OS level: firewall rules, fail2ban for brute-force protection, SSH key authentication only, regular security patching, and automatic malware scanning</li>
-        <li><strong>Automated daily backups</strong> — full site and database backups are taken automatically and stored offsite. In the event of any issue, the site can be restored to a previous point quickly and without data loss</li>
-        <li><strong>Staging environment</strong> — a private staging version of the site can be maintained on the same server, allowing updates, design changes, and new features to be tested before they go live</li>
-        <li><strong>No arbitrary resource caps</strong> — generic managed hosting plans impose limits on traffic, storage, or database queries. On the VPS, resource limits are defined by the server specification, not an artificial plan tier</li>
-        <li><strong>Single point of contact</strong> — hosting, performance, security, and the site itself are all managed by me. There is no finger-pointing between a hosting provider and a developer when something needs attention</li>
-        <li><strong>Cost efficiency at scale</strong> — as more sites are hosted on the same VPS, the per-site cost of hosting reduces, making it a more economical long-term arrangement than individual managed hosting plans</li>
+        <li><strong>Dedicated resources</strong> — on shared hosting, your site shares a server with hundreds of others. A spike in traffic on a neighbouring site can slow yours down. On a VPS, your site has its own allocated CPU and RAM that no one else can consume
+          <span class="layman">In plain English: your website has its own private space on the server — what other websites do cannot affect yours</span>
+        </li>
+        <li><strong>Full server control</strong> — I configure the server specifically for WordPress: PHP version, memory limits, caching, database optimisation, and redirects are all set to best-practice standards rather than generic defaults
+          <span class="layman">In plain English: every setting on the server is tuned for your site specifically — not left on the out-of-the-box defaults that most hosting companies use</span>
+        </li>
+        <li><strong>Optimised server stack</strong> — the server runs nginx, PHP 8.x, and Redis object caching — a combination that delivers significantly better performance than standard managed WordPress hosting
+          <span class="layman">In plain English: the software powering the server is chosen and configured for speed — the same way a performance car needs the right engine, not just any engine</span>
+        </li>
+        <li><strong>Enhanced security</strong> — the server is hardened at the operating system level: firewall rules, brute-force protection, key-only login access, regular security patching, and automatic malware scanning
+          <span class="layman">In plain English: the server is locked down at every level — not just the website itself, but the machine it runs on</span>
+        </li>
+        <li><strong>Automated daily backups</strong> — full site and database backups are taken automatically every day and stored offsite. The site can be restored to any previous point quickly and without data loss
+          <span class="layman">In plain English: a complete copy of your website is saved every single day — if anything ever goes wrong, nothing is lost and it can be restored quickly</span>
+        </li>
+        <li><strong>Staging environment</strong> — a private copy of the live site can be maintained on the same server, allowing updates, design changes, and new features to be fully tested before going live
+          <span class="layman">In plain English: changes are tested on a hidden copy of the site first — visitors never see anything half-finished or broken</span>
+        </li>
+        <li><strong>No arbitrary resource caps</strong> — generic hosting plans impose artificial limits on traffic, storage, or database queries. On the VPS, limits are defined by the actual server specification, not a plan tier
+          <span class="layman">In plain English: there are no surprise "you've hit your limit" messages — the site can grow without being held back by an arbitrary hosting plan</span>
+        </li>
+        <li><strong>Single point of contact</strong> — hosting, performance, security, and the website itself are all managed by me. There is no confusion about who to call when something needs attention
+          <span class="layman">In plain English: one person handles everything — no being passed between a hosting company and a web developer while a problem sits unresolved</span>
+        </li>
+        <li><strong>Cost efficiency at scale</strong> — as more sites are hosted on the same VPS, the per-site hosting cost reduces, making it a more economical long-term arrangement than separate managed hosting plans
+          <span class="layman">In plain English: hosting on my server is better value than paying separately for a managed hosting plan — and the quality of service is higher</span>
+        </li>
       </ul>
     </div>
   </section>
